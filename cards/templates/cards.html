@@ -1,0 +1,28 @@
+{% extends 'core.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Cartas{% endblock %}
+
+{% block js_include %}'scripts/cards'{% endblock %}
+
+{% block content %}
+	{% for card in page %}
+		<div>{{card.nombre}}</div>
+		<div>{{card.numero_de_coleccionista}}</div>
+		<div class="url" data-url="{{card.get_absolute_url}}">Ver</div>
+	{% endfor %}
+	{% if page.has_previous %}
+		<div class="url" data-url="?page={{page.previous_page_number}}">previous</div>
+	{% endif %}
+	{% if page.has_previous or page.has_next %}
+		<div>Page {{page.number}} of {{page.paginator.num_pages}}.</div>
+	{% endif %}
+	{% if page.has_next %}
+		<div class="url" data-url="?page={{page.next_page_number}}">next</div>
+	{% endif %}
+{% endblock %}
+
+{% block css_files %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/cards.css' %}">
+{% endblock %}

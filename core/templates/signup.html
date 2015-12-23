@@ -1,0 +1,18 @@
+{% extends 'core.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+	<form action="" method="post">
+		{% csrf_token %}
+		{{form}}
+		<input type="submit" value="Crear cuenta">
+	</form>
+	¿Ya tienes una cuenta? <span class="link url" data-url="/login/">Inicia sesión aquí</span>
+{% endblock %}
+
+{% block css_files %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+{% endblock %}

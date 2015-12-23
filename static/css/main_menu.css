@@ -1,0 +1,72 @@
+body {
+}
+
+.box-container {
+	position: absolute;
+	padding: 50px 10px 50px 10px;
+	background-color: rgba(0, 0, 0, 0.85);
+	border-top: 1px solid rgba(150, 150, 150, 0.85);
+	border-left: 1px solid rgba(85, 85, 85, 0.85);
+	border-right: 1px solid rgba(85, 85, 85, 0.85);
+	border-bottom: 1px solid rgba(85, 85, 85, 0.85);
+	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.85);
+	background: linear-gradient(135deg, rgba(45, 45, 45, 0.75) 0%, rgba(30, 30, 30, 0.85) 35%, rgba(35, 30, 30, 0.80) 65%, rgba(55, 45, 45, 0.75) 100%);
+}
+
+.box-close {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 10px;
+	right: 10px;
+}
+
+.box-title {
+	float: left;
+	text-align: center;
+	width: 100%;
+	font-size: 16.5px;
+	line-height: 20px;
+	color: rgb(215, 215, 215);
+	margin-top: -35px;
+	font-family: 'Cuprum', sans-serif;
+	text-shadow: 0 0 1px rgb(0, 0, 0);
+}
+
+.box-close:hover {
+}
+
+.box-close:active {
+}
+
+.test {
+	width: 375px;
+	height: 500px;
+}
+
+.test2 {
+	background-color: rgba(25, 25, 25, 1);
+	border-bottom: 1px solid black;
+}
+
+.test2b {
+	height: 50px;
+	border-bottom: 1px solid rgb(40, 40, 40);
+}
+
+.testx {
+	padding: 1px;
+	background-color: black;
+	border-bottom: 1px solid rgba(85, 85, 85, 0.85);
+}
+
+.grande {
+	width: auto !important;
+	height: auto !important;
+}
+
+.grandehijo {
+	width: 775px;
+	height: 600px;
+	background-color: rgba(25, 25, 25, 1);
+}

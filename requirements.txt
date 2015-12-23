@@ -1,0 +1,4 @@
+Django==1.9
+argparse==1.2.1
+redis==2.10.5
+wsgiref==0.1.2
