@@ -1,99 +1,127 @@
 #core-head {
+	background-color: rgb(50, 50, 50);
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	height: 50px;
-	background: linear-gradient(to bottom, rgb(60, 60, 60) 0%, rgb(40, 40, 40) 100%);
-	border-bottom: 1px solid rgb(25, 25, 25);
-	box-shadow: 0 0 1px 0 rgb(0, 0, 0);
 }
 
-#core-head-configuration {
+#core-head-content {
+	padding-left: 25px;
+	padding-right: 25px;
+	width: 1230px;
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 50px;
-	height: 50px;
-	background: linear-gradient(to bottom, rgb(80, 80, 80) 0%, rgb(60, 60, 60) 100%);
-	border-right: 1px solid rgb(25, 25, 25);
+	left: calc(50% - 640px);
 }
 
-#core-head-configuration:hover {
-	background: linear-gradient(to bottom, rgb(90, 90, 90) 0%, rgb(70, 70, 70) 100%);
-}
-
-#core-head-back {
-	position: absolute;
-	top: 0;
-	left: 51px;
-	width: 50px;
-	height: 50px;
-	background: linear-gradient(to bottom, rgb(80, 80, 80) 0%, rgb(60, 60, 60) 100%);
-	border-right: 1px solid rgb(25, 25, 25);
-}
-
-#core-head-back:hover {
-	background: linear-gradient(to bottom, rgb(90, 90, 90) 0%, rgb(70, 70, 70) 100%);
-}
-
-#core-head-nav {
-	position: absolute;
-	left: calc(50% - 225px);
-}
-
-#core-head-nav ul li {
+#core-head-navigation {
 	float: left;
 }
 
-.core-head-nav-separator {
+.core-head-navigation-option {
 	float: left;
-	width: 1px;
+	width: 100px;
+	height: 50px;
+	/* font */
+	color: rgb(225, 225, 225);
+	text-align: center;
+	line-height: 50px;
+	font-size: 15px;
+	font-family: sans-serif;
+}
+
+.core-head-navigation-option:hover {
+	background-color: rgb(40, 40, 40);
+	color: rgb(250, 250, 250);
+}
+
+.core-head-navigation-option-selected {
+	float: left;
+	width: 100px;
 	height: 50px;
 	background-color: rgb(25, 25, 25);
+	/* font */
+	color: rgb(225, 50, 50);
+	text-align: center;
+	line-height: 50px;
+	font-size: 15px;
+	font-family: sans-serif;
 }
 
-.core-head-nav-button {
-	width: 150px;
+#core-head-user {
+	float: right;
+	padding-left: 10px;
+	padding-right: 10px;
 	height: 50px;
-	background: linear-gradient(to bottom, rgb(80, 80, 80) 0%, rgb(60, 60, 60) 50%, rgb(50, 50, 50) 51%, rgb(60, 60, 60) 100%);
 	cursor: pointer;
-	/* Font */
-	font-size: 16px;
-	font-family: 'Exo 2', sans-serif;
+}
+
+#core-head-user:hover > #core-head-user-name {
+	color: rgb(250, 250, 250);
+}
+
+#core-head-user-avatar {
+	float: left;
+	margin-top: 10px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+#core-head-user-name {
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	height: 30px;
+	cursor: pointer;
+	/* font */
 	color: rgb(225, 225, 225);
-	line-height: 50px;
-	text-align: center;
-	text-shadow: 0 1px 1px black;
+	line-height: 30px;
+	font-size: 15px;
+	font-family: sans-serif;
 }
 
-.core-head-nav-button:hover {
-	background: linear-gradient(to bottom, rgb(90, 90, 90) 0%, rgb(70, 70, 70) 50%, rgb(60, 60, 60) 51%, rgb(70, 70, 70) 100%);
-}
-
-.core-head-nav-selected-button {
-	width: 150px;
-	height: 50px;
-	background: linear-gradient(to bottom, rgb(80, 80, 80) 0%, rgb(60, 60, 60) 50%, rgb(50, 50, 50) 51%, rgb(60, 60, 60) 100%);
-	/* Font */
-	font-size: 16px;
-	font-family: 'Exo 2', sans-serif;
-	color: rgb(125, 125, 125);
-	line-height: 50px;
-	text-align: center;
-	text-shadow: 0 1px 1px black;
-}
-
-#core-head-logout {
-	position: absolute;
-	top: 0;
-	right: 0;
+#core-head-notifications {
+	float: right;
 	width: 50px;
 	height: 50px;
-	background: linear-gradient(to bottom, rgb(70, 70, 70) 0%, rgb(50, 50, 50) 100%);
-	border-left: 1px solid rgb(25, 25, 25);
 }
 
-#core-head-logout:hover {
-	background: linear-gradient(to bottom, rgb(80, 80, 80) 0%, rgb(60, 60, 60) 100%);
+#core-head-messages {
+	float: right;
+	width: 50px;
+	height: 50px;
+}
+
+#core-head-settingsandmore {
+	float: right;
+	width: 50px;
+	height: 50px;
+}
+
+.core-head-icon {
+	color: rgb(225, 225, 225);
+	cursor: pointer;
+}
+
+.core-head-icon:hover {
+	color: rgb(250, 250, 250);
+}
+
+.core-head-icon-selected {
+	color: rgb(225, 50, 50);
+	cursor: pointer;
+}
+
+.core-head-icon-selected:hover {
+	color: rgb(250, 50, 50);
+}
+
+.core-head-icon-type-a {
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 16px;
 }

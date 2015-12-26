@@ -7,6 +7,7 @@ from django.contrib.auth import login as user_login, authenticate, logout as use
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+import json
 
 def signup(request):
 	if request.user.is_authenticated():
@@ -20,12 +21,17 @@ def signup(request):
 	else:
 		form = UserCreationForm()
 
-	return render(request, 'signup.html', {
-		'template': 'signup',
-		'head': False,
-		'community': False,
+	c = {
+		'settings': {
+			'template': 'signup',
+			'head': False,
+			'community': False,
+			'js_include': '',
+		},
 		'form': form,
-	})
+	}
+	c.update({'settings_to_json': json.dumps(c['settings'])})
+	return render(request, 'signup.html', c)
 
 def login(request):
 	if request.user.is_authenticated():
@@ -44,12 +50,17 @@ def login(request):
 	else:
 		form = AuthenticationForm()
 
-	return render(request, 'login.html', {
-		'template': 'login',
-		'head': False,
-		'community': False, 
+	c = {
+		'settings': {
+			'template': 'login',
+			'head': False,
+			'community': False,
+			'js_include': '',
+		},
 		'form': form,
-	})
+	}
+	c.update({'settings_to_json': json.dumps(c['settings'])})
+	return render(request, 'login.html', c)
 
 @login_required(login_url='/login/')
 def logout(request):
@@ -57,16 +68,20 @@ def logout(request):
 	return HttpResponseRedirect('/login/')
 
 @login_required(login_url='/login/')
-def main_menu(request):
-	return render(request, 'main_menu.html', {
-		'template': 'main_menu',
-		'head': True,
-		'community': True,
-	})
+def start(request):
+	c = {
+		'settings': {
+			'template': 'start',
+			'head': True,
+			'community': True,
+			'js_include': 'scripts/start',
+		},
+	}
+	c.update({'settings_to_json': json.dumps(c['settings'])})
+	return render(request, 'start.html', c)
 
-# Testing
+##### Testing Socket.IO + NodeJS + Redis + Django #####
 
-import json
 import redis as Redis
 from django.utils.crypto import get_random_string
 

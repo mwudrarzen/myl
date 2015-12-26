@@ -1,39 +1,55 @@
-define(['jqueryui', 'waitForImages'], function(){
-	var interfaz = {
-		config: {
-			fadeInDelay: 750,
-			fadeOutDelay: 750
+define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settings.js_include], 
+	function (jqueryui, waitForImages, headModule, communityModule) {
+
+	console.log('iniciando main');
+
+	var loaderObj = {
+		settings: {
+			fadeInDuration: 750,
+			fadeOutDuration: 750,
+			backgroundImg: false,
+			backgroundImgUrl: '/static/img/test.png'
 		},
-		elementos: {
-			loader: $('#loader'),
-			contenido: $('#core-content')
+		inicializar: function () {
+			console.log('inicializando loader')
+			this.cargarImagenes();
 		},
-		inicializar: function(){
-			/*
-			var url = '/static/test.png';
-			$('<img>').attr('src', url).load(function(){
-				this.remove();
-				$('body').css({'background-image':'url(' + url + ')'});
-				$('body').waitForImages(function(){
-					interfaz.mostrarInterfaz();
-				});
-			});*/
-			interfaz.mostrarInterfaz();
+		cargarImagenes: function () {
+			var self = this;
+			if(this.settings.backgroundImg) {
+				$('<img>').attr('src', this.settings.backgroundImgUrl).load(function () {
+					this.remove();
+					$('body').css({
+						'background-image': 'url(' + self.settings.backgroundImgUrl + ')'
+					});
+					$('body').waitForImages(function () {
+						self.finalizar();
+					})
+				})
+			}
+			else {
+				$('body').waitForImages(function () {
+					self.finalizar();
+				})
+			}
 		},
-		mostrarInterfaz: function(){
-			this.elementos.loader.fadeOut(this.config.fadeOutDelay);
-			this.elementos.contenido.fadeIn(this.config.fadeInDelay);
+		finalizar: function () {
+			$('#loader').fadeOut(this.settings.fadeOutDuration);
+			$('#core-content').fadeIn(this.settings.fadeInDuration);
 		}
 	};
 
-	$('.url').click(function(){
+	$('.url').click(function () {
+		$(this).css({
+			'cursor': 'default'
+		});
 		location.href = $(this).data('url');
 	});
 
 	$('.window').mousedown(function (event) {
 		if(event.which == 1) {
 			$('.window').css('z-index', 1000);
-			$(this).css('z-index', 2000);	
+			$(this).css('z-index', 2000);
 		}
 	});
 
@@ -51,5 +67,5 @@ define(['jqueryui', 'waitForImages'], function(){
 		});
 	})
 
-	interfaz.inicializar();
+	loaderObj.inicializar();
 });

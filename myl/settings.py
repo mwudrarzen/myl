@@ -123,3 +123,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+
+# myl
+
+LAST_UPDATE = '23-12-2015'

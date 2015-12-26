@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'icomoon';
+    src:
+        url('fonts/icomoon.ttf?waj6cz') format('truetype'),
+        url('fonts/icomoon.woff?waj6cz') format('woff'),
+        url('fonts/icomoon.svg?waj6cz#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bell:before {
+    content: "\e962";
+}
+.icon-user:before {
+    content: "\e901";
+}
+.icon-users:before {
+    content: "\e902";
+}
+.icon-user-plus:before {
+    content: "\e903";
+}
+.icon-user-minus:before {
+    content: "\e904";
+}
+.icon-user-check:before {
+    content: "\e905";
+}
+.icon-enlarge:before {
+    content: "\e906";
+}
+.icon-shrink:before {
+    content: "\e907";
+}
+.icon-enlarge2:before {
+    content: "\e908";
+}
+.icon-shrink2:before {
+    content: "\e909";
+}
+.icon-menu3:before {
+    content: "\e90b";
+}
+.icon-menu4:before {
+    content: "\e90c";
+}
+.icon-plus:before {
+    content: "\ea0d";
+}
+.icon-minus:before {
+    content: "\ea0e";
+}
+.icon-cross:before {
+    content: "\e90e";
+}
+.icon-checkmark:before {
+    content: "\ea12";
+}
+.icon-enter:before {
+    content: "\ea15";
+}
+.icon-exitGrid Size: 16:before {
+    content: "\e90f";
+}
+.icon-volume-mute2:before {
+    content: "\ea2b";
+}
+.icon-volume-increase:before {
+    content: "\ea2c";
+}
+.icon-volume-decrease:before {
+    content: "\ea2d";
+}
+.icon-arrow-up:before {
+    content: "\ea33";
+}
+.icon-arrow-right:before {
+    content: "\ea35";
+}
+.icon-arrow-down:before {
+    content: "\ea37";
+}
+.icon-arrow-left:before {
+    content: "\ea39";
+}
+.icon-arrow-up2:before {
+    content: "\ea3b";
+}
+.icon-arrow-right2:before {
+    content: "\ea3d";
+}
+.icon-arrow-down2:before {
+    content: "\ea3f";
+}
+.icon-arrow-left2:before {
+    content: "\e910";
+}
+.icon-mail3:before {
+    content: "\ea85";
+}
+.icon-facebook:before {
+    content: "\ea90";
+}
+.icon-twitter:before {
+    content: "\ea96";
+}
+
