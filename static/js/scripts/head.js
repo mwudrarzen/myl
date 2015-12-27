@@ -21,7 +21,12 @@ if(settings.head) {
 						$(this.botonActivado).css({
 							'background-color': 'transparent'
 						});
+						// restablecer el color
 						$(this.botonActivado).find('.icon').removeClass('core-head-icon-selected').addClass('core-head-icon');
+						if($(this.botonActivado).attr('id') == 'core-head-user') {
+							$(this.botonActivado).find('#core-head-user-name').removeClass('core-head-user-name-selected');
+						}
+						//
 						if($(this.botonActivado).attr('id') == 'core-head-settingsandmore') {
 							$(this.botonActivado).find('.icon').removeClass('icon-menu4').addClass('icon-menu3');
 						}
@@ -31,6 +36,9 @@ if(settings.head) {
 						'background-color': 'rgb(25, 25, 25)'
 					});
 					$(boton).find('.icon').removeClass('core-head-icon').addClass('core-head-icon-selected');
+					if($(boton).attr('id') == 'core-head-user') {
+						$(boton).find('#core-head-user-name').addClass('core-head-user-name-selected');
+					}
 					if($(boton).attr('id') == 'core-head-settingsandmore') {
 						$(boton).find('.icon').removeClass('icon-menu3').addClass('icon-menu4');
 					}
@@ -39,7 +47,12 @@ if(settings.head) {
 					$(boton).css({
 						'background-color': 'transparent'
 					});
+					// restablecer el color
 					$(boton).find('.icon').removeClass('core-head-icon-selected').addClass('core-head-icon');
+					if($(boton).attr('id') == 'core-head-user') {
+						$(boton).find('#core-head-user-name').removeClass('core-head-user-name-selected');
+					}
+					//
 					if($(boton).attr('id') == 'core-head-settingsandmore') {
 						$(boton).find('.icon').removeClass('icon-menu4').addClass('icon-menu3');
 					}

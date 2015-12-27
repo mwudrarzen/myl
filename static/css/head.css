@@ -42,7 +42,7 @@
 	height: 50px;
 	background-color: rgb(25, 25, 25);
 	/* font */
-	color: rgb(225, 50, 50);
+	color: rgb(225, 65, 65);
 	text-align: center;
 	line-height: 50px;
 	font-size: 15px;
@@ -82,6 +82,14 @@
 	font-family: sans-serif;
 }
 
+.core-head-user-name-selected {
+	color: rgb(225, 65, 65) !important;
+}
+
+.core-head-user-name-selected:hover {
+	color: rgb(250, 65, 65) !important;
+}
+
 #core-head-notifications {
 	float: right;
 	width: 50px;
@@ -110,12 +118,12 @@
 }
 
 .core-head-icon-selected {
-	color: rgb(225, 50, 50);
+	color: rgb(225, 65, 65);
 	cursor: pointer;
 }
 
 .core-head-icon-selected:hover {
-	color: rgb(250, 50, 50);
+	color: rgb(250, 65, 65);
 }
 
 .core-head-icon-type-a {
