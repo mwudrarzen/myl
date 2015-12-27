@@ -21,12 +21,14 @@ if(settings.head) {
 						$(this.botonActivado).css({
 							'background-color': 'transparent'
 						});
+						// ocultar el contenido
+						$('#' + $(this.botonActivado).attr('id') + '-content').hide();
 						// restablecer el color
 						$(this.botonActivado).find('.icon').removeClass('core-head-icon-selected').addClass('core-head-icon');
 						if($(this.botonActivado).attr('id') == 'core-head-user') {
 							$(this.botonActivado).find('#core-head-user-name').removeClass('core-head-user-name-selected');
 						}
-						//
+						// restablecer icono de settings and more
 						if($(this.botonActivado).attr('id') == 'core-head-settingsandmore') {
 							$(this.botonActivado).find('.icon').removeClass('icon-menu4').addClass('icon-menu3');
 						}
@@ -35,10 +37,15 @@ if(settings.head) {
 					$(boton).css({
 						'background-color': 'rgb(25, 25, 25)'
 					});
+					// mostrar contenido
+					this.posicionarContenido($(boton).attr('id') + '-content');
+					$('#' + $(boton).attr('id') + '-content').show();
+					// cambiar color
 					$(boton).find('.icon').removeClass('core-head-icon').addClass('core-head-icon-selected');
 					if($(boton).attr('id') == 'core-head-user') {
 						$(boton).find('#core-head-user-name').addClass('core-head-user-name-selected');
 					}
+					// cambiar icono de settings and more
 					if($(boton).attr('id') == 'core-head-settingsandmore') {
 						$(boton).find('.icon').removeClass('icon-menu3').addClass('icon-menu4');
 					}
@@ -47,6 +54,8 @@ if(settings.head) {
 					$(boton).css({
 						'background-color': 'transparent'
 					});
+					// ocultar el contenido
+					$('#' + $(boton).attr('id') + '-content').hide();
 					// restablecer el color
 					$(boton).find('.icon').removeClass('core-head-icon-selected').addClass('core-head-icon');
 					if($(boton).attr('id') == 'core-head-user') {
@@ -57,6 +66,17 @@ if(settings.head) {
 						$(boton).find('.icon').removeClass('icon-menu4').addClass('icon-menu3');
 					}
 					this.botonActivado = false;
+				},
+				posicionarContenido: function (id) {
+					id = '#' + id;
+					var other = id.replace('-content', '');
+					console.log($(other).width());
+					if($(id).data('positioned') != 'true'){
+						$(id).css({
+							'right': 1280 - ($(other).position().left) - $(other).width() - 10
+						});
+						$(id).data('positioned', 'true');
+					}
 				}
 			}
 		};
