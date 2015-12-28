@@ -1,8 +1,11 @@
 if(settings.head) {
 	define([], function () {
+		//
+		console.log('iniciando head.js');
+
 		var headObj = {
 			inicializar: function () {
-				console.log('inicializando head');
+				console.log('inicializando headObj');
 				$('head').append($('<link rel="stylesheet" type="text/css">').attr('href', '/static/css/head.css'));
 				this.renderizar();
 			},
@@ -70,12 +73,11 @@ if(settings.head) {
 				posicionarContenido: function (id) {
 					id = '#' + id;
 					var other = id.replace('-content', '');
-					console.log($(other).width());
-					if($(id).data('positioned') != 'true'){
+					if(!$(id).data('positioned')){
 						$(id).css({
-							'right': 1280 - ($(other).position().left) - $(other).width() - 10
+							'right': 1230 - ($(other).position().left) - $(other).width() - 10
 						});
-						$(id).data('positioned', 'true');
+						$(id).data('positioned', true);
 					}
 				}
 			}
@@ -100,6 +102,11 @@ if(settings.head) {
 		});
 
 		// click
+		$('#core-container').click(function () {
+			if(headObj.botones.botonActivado != false){
+				headObj.botones.desactivarBoton($(headObj.botones.botonActivado));
+			}
+		});
 		$('.core-head-button').click(function () {
 			if(headObj.botones.botonActivado != this) {
 				headObj.botones.activarBoton(this);
@@ -114,5 +121,6 @@ if(settings.head) {
 		var module = new Object();
 		module.headObj = headObj;
 		return module;
+		//
 	});
 }

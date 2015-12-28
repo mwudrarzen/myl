@@ -4,22 +4,22 @@
 }
 
 body {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	min-width: 1280px;
 	background-color: rgb(200, 200, 200);
-	z-index: -1000;
+	z-index: 1000;
+}
+
+#core-container {
+	display: none;
+	z-index: 1001;
 }
 
 #core-content {
-	position: absolute;
-	top: 0;
-	bottom: 0;
 	width: 1230px;
-	left: calc(50% - 615px);
-	z-index: -999;
+	margin: 0 auto;
+	padding: 10px;
+	box-sizing: border-box;
+	z-index: 1002;
 	background-color: rgb(225, 225, 225);
 }
 

@@ -1,3 +1,5 @@
 define([], function () {
-	console.log('iniciando start');
+	//
+	console.log('iniciando start.js');
+	//
 });

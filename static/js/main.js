@@ -1,7 +1,24 @@
 define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settings.js_include], 
 	function (jqueryui, waitForImages, headModule, communityModule) {
+	//
+	console.log('iniciando main.js');
 
-	console.log('iniciando main');
+	var mainObj = {
+		inicializar: function () {
+			console.log('inicializando mainObj');
+			this.renderizar();
+		},
+		renderizar: function () {
+			// si esta cargado el head, restar al height los 50px de padding top que obtiene body
+			if(settings.head) {
+				$('#core-content').css({'min-height': $(window).height() - 50});
+			}
+			else {
+				$('#core-content').css({'min-height': $(window).height()});
+			}
+			//
+		}
+	};
 
 	var loaderObj = {
 		settings: {
@@ -11,7 +28,7 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 			backgroundImgUrl: '/static/img/test.png'
 		},
 		inicializar: function () {
-			console.log('inicializando loader')
+			console.log('inicializando loaderObj')
 			this.cargarImagenes();
 		},
 		cargarImagenes: function () {
@@ -34,8 +51,11 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 			}
 		},
 		finalizar: function () {
-			$('#loader').fadeOut(this.settings.fadeOutDuration);
-			$('#core-content').fadeIn(this.settings.fadeInDuration);
+			$('#core-head').show();
+			$('#core-container').show();
+			$('#loader').fadeOut(this.settings.fadeOutDuration, function () {
+				$(this).remove();
+			});
 		}
 	};
 
@@ -67,5 +87,7 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 		});
 	})
 
+	mainObj.inicializar();
 	loaderObj.inicializar();
+	//
 });

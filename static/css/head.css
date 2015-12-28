@@ -1,18 +1,27 @@
+body {
+	padding-top: 50px;
+}
+
 #core-head {
+	display: none;
 	background-color: rgb(50, 50, 50);
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	height: 50px;
+	z-index: 10000;
 }
 
 #core-head-content {
-	padding-left: 25px;
-	padding-right: 25px;
-	width: 1230px;
 	position: absolute;
-	left: calc(50% - 640px);
+	width: 1230px;
+	height: 100%;
+	left: calc(50% - 615px);
+}
+
+#core-head-lc {
+	float: left;
 }
 
 #core-head-navigation {
@@ -47,6 +56,10 @@
 	line-height: 50px;
 	font-size: 15px;
 	font-family: sans-serif;
+}
+
+#core-head-rc {
+	float: right;
 }
 
 #core-head-user {
@@ -95,15 +108,15 @@
 	display: none;
 	position: absolute;
 	top: 60px;
-	padding: 10px;
 	background-color: rgb(25, 25, 25);
 }
 
 #core-head-user-content li {
-	width: 145px;
+	width: 150px;
+	box-sizing: border-box;
+	padding-left: 10px;
 	height: 30px;
 	cursor: pointer;
-	padding-left: 10px;
 	/* font */
 	color: rgb(225, 225, 225);
 	line-height: 30px;
@@ -117,9 +130,19 @@
 }
 
 #core-head-notifications {
+	position: relative;
 	float: right;
 	width: 50px;
 	height: 50px;
+}
+
+#core-head-notifications-content {
+	display: none;
+	position: absolute;
+	width: 300px;
+	height: 250px;
+	top: 60px;
+	background-color: rgb(25, 25, 25);
 }
 
 #core-head-messages {
@@ -128,25 +151,25 @@
 	height: 50px;
 }
 
-#core-head-settingsandmore {
+#core-head-more {
 	position: relative;
 	float: right;
 	width: 50px;
 	height: 50px;
 }
 
-#core-head-settingsandmore-content {
+#core-head-more-content {
 	display: none;
 	position: absolute;
 	top: 60px;
-	padding: 10px;
 	background-color: rgb(25, 25, 25);
 }
 
-#core-head-settingsandmore-content li {
-	width: 145px;
-	height: 30px;
+#core-head-more-content li {
+	width: 150px;
+	box-sizing: border-box;
 	padding-left: 10px;
+	height: 30px;
 	cursor: pointer;
 	/* font */
 	color: rgb(225, 225, 225);
@@ -155,8 +178,8 @@
 	font-family: sans-serif;
 }
 
-#core-head-settingsandmore-content li:hover {
-	background-color: rgb(40, 40, 40);
+#core-head-more-content li:hover {
+	background-color: rgb(50, 50, 50);
 	color: rgb(250, 250, 250);
 }
 
