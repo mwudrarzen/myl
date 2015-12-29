@@ -30,14 +30,15 @@ body {
 
 .core-head-navigation-option {
 	float: left;
-	width: 85px;
+	width: 75px;
 	height: 50px;
 	/* font */
 	color: rgb(225, 225, 225);
 	text-align: center;
 	line-height: 50px;
-	font-size: 15px;
-	font-family: sans-serif;
+	font-size: 16px;
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 300;
 }
 
 .core-head-navigation-option:hover {
@@ -47,15 +48,16 @@ body {
 
 .core-head-navigation-option-selected {
 	float: left;
-	width: 85px;
+	width: 75px;
 	height: 50px;
 	background-color: rgb(25, 25, 25);
 	/* font */
-	color: rgb(225, 65, 65);
+	color: rgb(75, 200, 50);
 	text-align: center;
 	line-height: 50px;
-	font-size: 15px;
-	font-family: sans-serif;
+	font-size: 16px;
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 300;
 }
 
 #core-head-rc {
@@ -71,6 +73,10 @@ body {
 
 #core-head-user:hover > #core-head-user-name {
 	color: rgb(250, 250, 250);
+}
+
+#core-head-user:hover > .core-head-user-name-selected {
+	color: rgb(75, 225, 50) !important;
 }
 
 #core-head-user-avatar {
@@ -92,16 +98,13 @@ body {
 	/* font */
 	color: rgb(225, 225, 225);
 	line-height: 30px;
-	font-size: 15px;
-	font-family: sans-serif;
+	font-size: 16px;
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 300;
 }
 
 .core-head-user-name-selected {
-	color: rgb(225, 65, 65) !important;
-}
-
-.core-head-user-name-selected:hover {
-	color: rgb(250, 65, 65) !important;
+	color: rgb(75, 200, 50) !important;
 }
 
 #core-head-user-content {
@@ -120,8 +123,8 @@ body {
 	/* font */
 	color: rgb(225, 225, 225);
 	line-height: 30px;
-	font-size: 15px;
-	font-family: sans-serif;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #core-head-user-content li:hover {
@@ -134,15 +137,6 @@ body {
 	float: right;
 	width: 50px;
 	height: 50px;
-}
-
-#core-head-notifications-content {
-	display: none;
-	position: absolute;
-	width: 300px;
-	height: 250px;
-	top: 60px;
-	background-color: rgb(25, 25, 25);
 }
 
 #core-head-messages {
@@ -174,8 +168,8 @@ body {
 	/* font */
 	color: rgb(225, 225, 225);
 	line-height: 30px;
-	font-size: 15px;
-	font-family: sans-serif;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #core-head-more-content li:hover {
@@ -193,12 +187,12 @@ body {
 }
 
 .core-head-icon-selected {
-	color: rgb(225, 65, 65);
+	color: rgb(75, 200, 50);
 	cursor: pointer;
 }
 
 .core-head-icon-selected:hover {
-	color: rgb(250, 65, 65);
+	color: rgb(75, 225, 50);
 }
 
 .core-head-icon-type-a {

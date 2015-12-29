@@ -9,6 +9,9 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 			this.renderizar();
 		},
 		renderizar: function () {
+			this.actualizarCC();
+		},
+		actualizarCC: function () { // actualizar el alto minimo de #core-content
 			// si esta cargado el head, restar al height los 50px de padding top que obtiene body
 			if(settings.head) {
 				$('#core-content').css({'min-height': $(window).height() - 50});
@@ -16,7 +19,6 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 			else {
 				$('#core-content').css({'min-height': $(window).height()});
 			}
-			//
 		}
 	};
 
@@ -86,6 +88,11 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 			containment: 'window'
 		});
 	})
+
+	// otros eventos
+	$(window).resize(function () {
+		mainObj.actualizarCC();
+	});
 
 	mainObj.inicializar();
 	loaderObj.inicializar();
