@@ -8,12 +8,21 @@ def shop(request):
 	shop_icons = Icon.objects.exclude(cost=0)
 	user_icons = request.user.extendeduserprofile.icons.exclude(cost=0)
 
+	for shop_icon in shop_icons:
+		acquired = False
+		try:
+			user_icons.filter(id=shop_icon.id).get()
+			acquired = True
+		except:
+			pass
+		shop_icon.acquired = acquired
+
 	c = {
 		'settings': {
 			'template': 'shop',
 			'head': True,
 			'community': False,
-			'js_include': '',
+			'js_include': 'scripts/shop',
 		},
 		'shop_icons': shop_icons,
 	}

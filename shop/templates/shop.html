@@ -6,24 +6,21 @@
 
 {% block content %}
 	<div id="shop-container">
-		<div id="shop-title">Tienda</div>
-		<div id="shop-user-gold">${{user.extendeduserprofile.gold}}</div>
 		<ul id="shop-navigation">
-			<li class="shop-navigation-option">Mazos</li>
+			<li id="shop-navigation-option-decks" class="shop-navigation-option">Mazos</li>
 			<li class="s25px"></li>
-			<li class="shop-navigation-option">Sobres</li>
+			<li id="shop-navigation-option-packs" class="shop-navigation-option">Sobres</li>
 			<li class="s25px"></li>
-			<li class="shop-navigation-option">Íconos</li>
+			<li id="shop-navigation-option-icons" class="shop-navigation-option">Íconos</li>
 			<li class="s25px"></li>
-			<li class="shop-navigation-option">Paquetes</li>
+			<li id="shop-navigation-option-bundles" class="shop-navigation-option">Paquetes</li>
 		</ul>
 		<div id="shop-content">
-			{{adquired_shop_icons}}
 			{% for shop_icon in shop_icons %}
-				{% if shop_icon.owned %}
-					<div>{{shop_icon.id}} - IS OWNED</div>
+				{% if shop_icon.acquired %}
+					{% include 'includes/shop_icons.html' with acquired=True %}
 				{% else %}
-					<div>{{shop_icon.id}} - IS NOT OWNED</div>
+					{% include 'includes/shop_icons.html' with acquired=False %}
 				{% endif %}
 			{% endfor %}
 		</div>
