@@ -1,0 +1,35 @@
+{% extends 'core.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Tienda{% endblock %}
+
+{% block content %}
+	<div id="shop-container">
+		<div id="shop-title">Tienda</div>
+		<div id="shop-user-gold">${{user.extendeduserprofile.gold}}</div>
+		<ul id="shop-navigation">
+			<li class="shop-navigation-option">Mazos</li>
+			<li class="s25px"></li>
+			<li class="shop-navigation-option">Sobres</li>
+			<li class="s25px"></li>
+			<li class="shop-navigation-option">Íconos</li>
+			<li class="s25px"></li>
+			<li class="shop-navigation-option">Paquetes</li>
+		</ul>
+		<div id="shop-content">
+			{{adquired_shop_icons}}
+			{% for shop_icon in shop_icons %}
+				{% if shop_icon.owned %}
+					<div>{{shop_icon.id}} - IS OWNED</div>
+				{% else %}
+					<div>{{shop_icon.id}} - IS NOT OWNED</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
+
+{% block css_files %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/shop.css' %}">
+{% endblock %}

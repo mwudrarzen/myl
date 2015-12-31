@@ -17,10 +17,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from core import urls as core_urls
+from shop import urls as shop_urls
 from cards import urls as cards_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include(core_urls)),
+    url(r'^shop/', include(shop_urls)),
     url(r'^cards/', include(cards_urls)),
 ]

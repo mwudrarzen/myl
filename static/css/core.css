@@ -26,3 +26,11 @@ body {
 .url {
 	cursor: pointer;
 }
+
+.s10px {
+	height: 10px;
+}
+
+.s25px {
+	height: 25px;
+}

@@ -52,7 +52,7 @@ body {
 	height: 50px;
 	background-color: rgb(25, 25, 25);
 	/* font */
-	color: rgb(75, 200, 50);
+	color: rgb(150, 200, 50);
 	text-align: center;
 	line-height: 50px;
 	font-size: 16px;
@@ -76,7 +76,7 @@ body {
 }
 
 #core-head-user:hover > .core-head-user-name-selected {
-	color: rgb(75, 225, 50) !important;
+	color: rgb(160, 210, 50) !important;
 }
 
 #core-head-user-avatar {
@@ -104,17 +104,17 @@ body {
 }
 
 .core-head-user-name-selected {
-	color: rgb(75, 200, 50) !important;
+	color: rgb(150, 200, 50) !important;
 }
 
 #core-head-user-content {
 	display: none;
 	position: absolute;
-	top: 60px;
+	top: 55px;
 	background-color: rgb(25, 25, 25);
 }
 
-#core-head-user-content li {
+.core-head-user-content-option {
 	width: 150px;
 	box-sizing: border-box;
 	padding-left: 10px;
@@ -127,7 +127,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
-#core-head-user-content li:hover {
+.core-head-user-content-option:hover {
 	background-color: rgb(40, 40, 40);
 	color: rgb(250, 250, 250);
 }
@@ -155,11 +155,11 @@ body {
 #core-head-more-content {
 	display: none;
 	position: absolute;
-	top: 60px;
+	top: 55px;
 	background-color: rgb(25, 25, 25);
 }
 
-#core-head-more-content li {
+.core-head-more-content-option {
 	width: 150px;
 	box-sizing: border-box;
 	padding-left: 10px;
@@ -172,7 +172,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
-#core-head-more-content li:hover {
+.core-head-more-content-option:hover {
 	background-color: rgb(50, 50, 50);
 	color: rgb(250, 250, 250);
 }
@@ -187,12 +187,12 @@ body {
 }
 
 .core-head-icon-selected {
-	color: rgb(75, 200, 50);
+	color: rgb(150, 200, 50);
 	cursor: pointer;
 }
 
 .core-head-icon-selected:hover {
-	color: rgb(75, 225, 50);
+	color: rgb(160, 210, 50);
 }
 
 .core-head-icon-type-a {

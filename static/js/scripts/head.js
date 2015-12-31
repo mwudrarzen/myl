@@ -75,7 +75,7 @@ if(settings.head) {
 					var other = id.replace('-content', '');
 					if(!$(id).data('positioned')){
 						$(id).css({
-							'right': 1230 - ($(other).position().left) - $(other).width() - 10
+							'right': 1230 - ($(other).position().left) - $(other).width() - 5
 						});
 						$(id).data('positioned', true);
 					}
