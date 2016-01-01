@@ -38,7 +38,7 @@ if(settings.head) {
 					}
 					this.botonActivado = boton;
 					$(boton).css({
-						'background-color': 'rgb(25, 25, 25)'
+						'background-color': 'rgb(40, 40, 40)'
 					});
 					// mostrar contenido
 					this.posicionarContenido($(boton).attr('id') + '-content');
@@ -87,7 +87,7 @@ if(settings.head) {
 		$('.core-head-button').mouseover(function () {
 			if(headObj.botones.botonActivado != this) {
 				$(this).css({
-					'background-color': 'rgb(40, 40, 40)'
+					'background-color': 'rgb(60, 60, 60)'
 				});
 			};
 		});

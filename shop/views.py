@@ -6,7 +6,7 @@ import json
 @login_required(login_url='/login/')
 def shop(request):
 	shop_icons = Icon.objects.exclude(cost=0)
-	user_icons = request.user.extendeduserprofile.icons.exclude(cost=0)
+	user_icons = request.user.userprofile.icons.exclude(cost=0)
 
 	for shop_icon in shop_icons:
 		owned = False

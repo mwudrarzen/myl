@@ -1,15 +1,15 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from .models import ExtendedUserProfile
+from .models import UserProfile
 
-class ExtendedUserProfileInline(admin.StackedInline):
-	model = ExtendedUserProfile
+class UserProfileInline(admin.StackedInline):
+	model = UserProfile
 	can_delete = False
-	verbose_name_plural = 'Perfil de usuario extendido'
+	verbose_name_plural = 'Perfil de usuario'
 
 class UserAdmin(UserAdmin):
-	inlines = (ExtendedUserProfileInline, )
+	inlines = (UserProfileInline, )
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)

@@ -27,12 +27,21 @@ def get_default_decks():
 
 	return default_decks
 
-class ExtendedUserProfile(models.Model):
+class UserProfile(models.Model):
 	user = models.OneToOneField(User)
-	gold = models.IntegerField(default=850, blank=False)
+	gold = models.IntegerField(default=1275, blank=False)
 	decks = models.TextField(default=get_default_decks(), blank=False)
 	icons = models.ManyToManyField(Icon)
 
 	def get_decks_in_json(self):
 		decks = eval(self.decks)
 		return json.dumps(decks)
+
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+@receiver(post_save, sender=User)
+def create_profile_handler(sender, instance, created, **kwargs):
+	if not created:
+		return
+	UserProfile.objects.create(user=instance)
