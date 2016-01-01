@@ -93,6 +93,16 @@ def test(request):
 	data = {'user': 'xmars2k1x'}
 	value = json.dumps(data)
 	redis.setex(key, 86400, value)
-	response = render(request, 'test.html')
+
+	c = {
+		'settings': {
+			'template': 'test',
+			'head': False,
+			'community': False,
+			'js_include': 'scripts/test',
+		},
+	}
+	c.update({'settings_to_json': json.dumps(c['settings'])})
+	response = render(request, 'test.html', c)
 	response.set_cookie(key='nodejskey', value=token, max_age=86400, domain=None, secure=None)
 	return response

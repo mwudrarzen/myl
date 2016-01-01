@@ -17,10 +17,10 @@
 		</ul>
 		<div id="shop-content">
 			{% for shop_icon in shop_icons %}
-				{% if shop_icon.acquired %}
-					{% include 'includes/shop_icons.html' with acquired=True %}
+				{% if shop_icon.owned %}
+					{% include 'includes/shop_icons.html' with owned=True %}
 				{% else %}
-					{% include 'includes/shop_icons.html' with acquired=False %}
+					{% include 'includes/shop_icons.html' with owned=False %}
 				{% endif %}
 			{% endfor %}
 		</div>
@@ -29,4 +29,5 @@
 
 {% block css_files %}
 	<link rel="stylesheet" type="text/css" href="{% static 'css/shop.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/shop_icons.css' %}">
 {% endblock %}

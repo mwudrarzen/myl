@@ -9,13 +9,13 @@ def shop(request):
 	user_icons = request.user.extendeduserprofile.icons.exclude(cost=0)
 
 	for shop_icon in shop_icons:
-		acquired = False
+		owned = False
 		try:
 			user_icons.filter(id=shop_icon.id).get()
-			acquired = True
+			owned = True
 		except:
 			pass
-		shop_icon.acquired = acquired
+		shop_icon.owned = owned
 
 	c = {
 		'settings': {

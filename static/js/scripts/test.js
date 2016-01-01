@@ -1,4 +1,4 @@
-define(['http://localhost:3000/socket.io/socket.io.js'], function (io) {
+define(['/socket.io/socket.io.js'], function (io) {
 	var socket = io('http://localhost:3000');
 
 	$('#enviar').click(function () {
