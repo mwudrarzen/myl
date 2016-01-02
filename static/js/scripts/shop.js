@@ -7,6 +7,7 @@ define(['scripts/utilities'], function (utilitiesModule) {
 		},
 		inicializar: function () {
 			console.log('inicializando shopObj')
+			this.renderizar();
 		},
 		renderizar: function () {
 			this.navegacion.seleccionarOpcion(document.getElementById('shop-navigation-option-decks'));
