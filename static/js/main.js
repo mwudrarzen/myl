@@ -27,7 +27,7 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 	};
 
 	var loaderObj = {
-		settings: {
+		ajustes: {
 			fadeInDuration: 750,
 			fadeOutDuration: 750
 		},
@@ -52,7 +52,7 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 		finalizar: function () {
 			if(settings.head) $('#core-head').show();
 			$('#core-container').show();
-			$('#loader').fadeOut(this.settings.fadeOutDuration, function () {
+			$('#loader').fadeOut(this.ajustes.fadeOutDuration, function () {
 				$(this).remove();
 			});
 		}

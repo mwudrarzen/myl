@@ -1,39 +1,15 @@
 {% if owned %}
-	<div class="shop-icon-container">
-		<div class="shop-icon-name" title="{{shop_icon.name}}">{{shop_icon.name|truncatechars:15}}</div>
+	<div class="shop-icon-container shop-icon-owned-container">
+		<div class="shop-icon-name" title="{{shop_icon.name}}">{{shop_icon.name|truncatechars:14}}</div>
 		<img class="shop-icon-image" src="{{shop_icon.path}}">
-		<div class="shop-icon-cost">$ {{shop_icon.cost}}</div>
-		<div class="shop-icon-button">Comprar</div>
-	</div>
-	<div class="shop-icon-container">
-		<div class="shop-icon-name" title="{{shop_icon.name}}">{{shop_icon.name|truncatechars:15}}</div>
-		<img class="shop-icon-image" src="{{shop_icon.path}}">
-		<div class="shop-icon-cost">$ {{shop_icon.cost}}</div>
-		<div class="shop-icon-button">Comprar</div>
-	</div>
-	<div class="shop-icon-container">
-		<div class="shop-icon-name" title="{{shop_icon.name}}">{{shop_icon.name|truncatechars:15}}</div>
-		<img class="shop-icon-image" src="{{shop_icon.path}}">
-		<div class="shop-icon-cost">$ {{shop_icon.cost}}</div>
-		<div class="shop-icon-button">Comprar</div>
+		<div class="shop-icon-cost">Adquirido</div>
+		<div class="shop-icon-button">Usar</div>
 	</div>
 {% else %}
 	<div class="shop-icon-container">
-		<div class="shop-icon-name" title="{{shop_icon.name}}">{{shop_icon.name|truncatechars:15}}</div>
+		<div class="shop-icon-name" title="{{shop_icon.name}}">{{shop_icon.name|truncatechars:14}}</div>
 		<img class="shop-icon-image" src="{{shop_icon.path}}">
-		<div class="shop-icon-cost">$ {{shop_icon.cost}}</div>
-		<div class="shop-icon-button">Comprar</div>
-	</div>
-	<div class="shop-icon-container">
-		<div class="shop-icon-name" title="{{shop_icon.name}}">{{shop_icon.name|truncatechars:15}}</div>
-		<img class="shop-icon-image" src="{{shop_icon.path}}">
-		<div class="shop-icon-cost">$ {{shop_icon.cost}}</div>
-		<div class="shop-icon-button">Comprar</div>
-	</div>
-	<div class="shop-icon-container">
-	<div class="shop-icon-name" title="{{shop_icon.name}}">{{shop_icon.name|truncatechars:15}}</div>
-		<img class="shop-icon-image" src="{{shop_icon.path}}">
-		<div class="shop-icon-cost">$ {{shop_icon.cost}}</div>
+		<div class="shop-icon-cost">{{shop_icon.cost}}</div>
 		<div class="shop-icon-button">Comprar</div>
 	</div>
 {% endif %}
