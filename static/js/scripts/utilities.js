@@ -3,11 +3,9 @@ define([], function () {
 
 	var utilitiesObj = {
 		cargarBackgroundImage: function (ruta, elemento, callback) {
-			console.log('cargarBackgroundImage:' + ' ' + ruta);
-			backgroundImage = $('<img>').attr('src', ruta).load(function () {
+			$('<img>').attr('src', ruta).load(function () {
 				$(this).remove();
 				$(elemento).css('background-image', 'url("' + ruta + '")');
-				console.log(ruta + ' ' + 'cargada (bgimg)');
 				callback();
 			});
 		},

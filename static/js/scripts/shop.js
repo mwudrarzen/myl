@@ -13,9 +13,7 @@ define(['scripts/utilities'], function (utilitiesModule) {
 			this.navegacion.seleccionarOpcion(document.getElementById('shop-navigation-option-decks'));
 		},
 		cargarBackgroundImages: function (callback) {
-			console.log('cargar bgimg shop (llamando funcion en utilities)');
 			utilitiesModule.cargarBackgroundImage('/static/img/backgrounds/shop.png', $('#shop-container'), function () {
-				console.log('cargado bgimg shop');
 				callback();
 			});
 		},

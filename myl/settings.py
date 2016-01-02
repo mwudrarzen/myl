@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'kl0mwmf+lqfhs%x-3wk$!22z%fjf9%--(s1+0s4_3%9e0s+v=&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+from temp import conf
+DEBUG = conf['general']['debug']
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

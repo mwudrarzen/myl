@@ -40,7 +40,6 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 			$('body').waitForImages(function () {
 				if(settings.js_include != '') {
 					if(includeModule.settings.backgroundImages) {
-						console.log('el includeModule tiene bgimgs');
 						includeModule.cargarBackgroundImages(function () {
 							self.finalizar();
 						});
