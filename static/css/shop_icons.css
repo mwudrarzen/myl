@@ -3,8 +3,8 @@
 	float: left;
 	width: 120px;
 	height: 200px;
-	margin-top: 17.5px;
-	margin-left: 64.16666666666667px;
+	margin-top: 17.5px; /* 670 c - 200 * 3 = 70 / 4 */
+	margin-left: 64.16666666666667px; /* 985 c - 120 * 5 = 385 / 6 */
 	background-color: rgb(225, 225, 225);
 	box-sizing: border-box;
 	/* box shadow */

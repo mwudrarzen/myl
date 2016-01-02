@@ -1,0 +1,17 @@
+{% extends 'core.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Cambios{% endblock %}
+
+{% block content %}
+	- se ajusto los colores en la cabecera (ya no tiene unc olor verde mas claro al hacer hover a algo seleccionado)<br><br>
+	- se arreglo el sistema de usuario, ahora se crea automaticamente el perfil extendido<br><br>
+	- se modifico el diseño de la tienda (aun falta cambiar el hover a un item de la tienda) esto es porque lo del scale (que achicaba los items) estaba medio bug en ambos navegadores que pretendo que soporte (uno se veia borroso y el otro tenia delay)<br><br>
+	- se pulio el js en general<br><br>
+	- ahora tambien carga las imagenes de fondo (background imgs), por lo que ya no muestra la pagina hasta cargarse todo<br><br>
+	- el que lee es owo<br><br>
+{% endblock %}
+
+{% block css_files %}
+{% endblock %}

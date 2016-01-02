@@ -106,3 +106,17 @@ def test(request):
 	response = render(request, 'test.html', c)
 	response.set_cookie(key='nodejskey', value=token, max_age=86400, domain=None, secure=None)
 	return response
+
+#test changelogtemporal
+
+def changelogtemp(request):
+	c = {
+		'settings': {
+			'template': 'changelogtemp',
+			'head': True,
+			'community': False,
+			'js_include': '',
+		},
+	}
+	c.update({'settings_to_json': json.dumps(c['settings'])})
+	return render(request, 'changelogtemp.html', c)
