@@ -11,6 +11,12 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/core.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/loader.css' %}">
+		{% if settings.head %}
+			<link rel="stylesheet" type="text/css" href="{% static 'css/head.css' %}">
+		{% endif %}
+		{% if settings.community %}
+			<link rel="stylesheet" type="text/css" href="{% static 'css/community.css' %}">
+		{% endif %}
 		{% block css_files %}{% endblock %}
 		<script src="{% static 'js/libraries/require.js' %}"></script>
 		<script>

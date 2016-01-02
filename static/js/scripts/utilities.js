@@ -2,6 +2,15 @@ define([], function () {
 	console.log('iniciando utilities.js');
 
 	var utilitiesObj = {
+		cargarBackgroundImage: function (ruta, elemento, callback) {
+			console.log('cargarBackgroundImage:' + ' ' + ruta);
+			backgroundImage = $('<img>').attr('src', ruta).load(function () {
+				$(this).remove();
+				$(elemento).css('background-image', 'url("' + ruta + '")');
+				console.log(ruta + ' ' + 'cargada (bgimg)');
+				callback();
+			});
+		},
 		zumbido: {
 			activo: false,
 			zumbar: function (elemento) {

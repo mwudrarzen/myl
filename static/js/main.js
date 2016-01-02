@@ -1,6 +1,6 @@
-define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settings.js_include], 
-	function (jqueryui, waitForImages, headModule, communityModule) {
-	//
+define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settings.js_include, 'scripts/utilities'],
+	function (jQueryUI, waitForImages, headModule, communityModule, includeModule, utilitiesModule) {
+
 	console.log('iniciando main.js');
 
 	var mainObj = {
@@ -9,15 +9,19 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 			this.renderizar();
 		},
 		renderizar: function () {
-			this.actualizarCC();
+			this.elementos.coreContent.actualizar();
 		},
-		actualizarCC: function () { // actualizar el alto minimo de #core-content
-			// si esta cargado el head, restar al height los 50px de padding top que obtiene body
-			if(settings.head) {
-				$('#core-content').css({'min-height': $(window).height() - 50});
-			}
-			else {
-				$('#core-content').css({'min-height': $(window).height()});
+		elementos: {
+			coreContent: {
+				el: $('#core-content'),
+				actualizar: function() {
+					if(settings.head) {
+						$(this.el).css('min-height', $(window).height() - 50);
+					}
+					else {
+						$(this.el).css('min-height', $(window).height());
+					}
+				}
 			}
 		}
 	};
@@ -25,35 +29,29 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 	var loaderObj = {
 		settings: {
 			fadeInDuration: 750,
-			fadeOutDuration: 750,
-			backgroundImg: false,
-			backgroundImgUrl: '/static/img/test.png'
+			fadeOutDuration: 750
 		},
 		inicializar: function () {
-			console.log('inicializando loaderObj')
+			console.log('inicializando loaderObj');
 			this.cargarImagenes();
 		},
 		cargarImagenes: function () {
 			var self = this;
-			if(this.settings.backgroundImg) {
-				$('<img>').attr('src', this.settings.backgroundImgUrl).load(function () {
-					this.remove();
-					$('body').css({
-						'background-image': 'url(' + self.settings.backgroundImgUrl + ')'
-					});
-					$('body').waitForImages(function () {
-						self.finalizar();
-					})
-				})
-			}
-			else {
-				$('body').waitForImages(function () {
-					self.finalizar();
-				})
-			}
+			$('body').waitForImages(function () {
+				if(settings.js_include != '') {
+					if(includeModule.settings.backgroundImages) {
+						console.log('el includeModule tiene bgimgs');
+						includeModule.cargarBackgroundImages(function () {
+							self.finalizar();
+						});
+					}
+					else self.finalizar();
+				}
+				else self.finalizar();
+			});
 		},
 		finalizar: function () {
-			$('#core-head').show();
+			if(settings.head) $('#core-head').show();
 			$('#core-container').show();
 			$('#loader').fadeOut(this.settings.fadeOutDuration, function () {
 				$(this).remove();
@@ -61,40 +59,17 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 		}
 	};
 
+	// click
 	$('.url').click(function () {
-		$(this).css({
-			'cursor': 'default'
-		});
+		$(this).css('cursor', 'default');
 		location.href = $(this).data('url');
 	});
 
-	$('.window').mousedown(function (event) {
-		if(event.which == 1) {
-			$('.window').css('z-index', 1000);
-			$(this).css('z-index', 2000);
-		}
-	});
-
-	$('.no-draggable').mouseover(function () {
-		$('.draggable').draggable({
-			disabled: true
-		});
-	})
-
-	$('.no-draggable').mouseout(function () {
-		$('.draggable').draggable({
-			disabled: false,
-			cursor: 'move !important',
-			containment: 'window'
-		});
-	})
-
 	// otros eventos
 	$(window).resize(function () {
-		mainObj.actualizarCC();
+		mainObj.elementos.coreContent.actualizar();
 	});
 
 	mainObj.inicializar();
 	loaderObj.inicializar();
-	//
 });

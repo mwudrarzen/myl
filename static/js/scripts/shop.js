@@ -2,12 +2,21 @@ define(['scripts/utilities'], function (utilitiesModule) {
 	console.log('iniciando shop.js');
 
 	var shopObj = {
+		settings: {
+			backgroundImages: true
+		},
 		inicializar: function () {
 			console.log('inicializando shopObj')
-			this.renderizar();
 		},
 		renderizar: function () {
 			this.navegacion.seleccionarOpcion(document.getElementById('shop-navigation-option-decks'));
+		},
+		cargarBackgroundImages: function (callback) {
+			console.log('cargar bgimg shop (llamando funcion en utilities)');
+			utilitiesModule.cargarBackgroundImage('/static/img/backgrounds/shop.png', $('#shop-container'), function () {
+				console.log('cargado bgimg shop');
+				callback();
+			});
 		},
 		navegacion: {
 			opcionSeleccionada: false,
@@ -37,7 +46,5 @@ define(['scripts/utilities'], function (utilitiesModule) {
 
 	shopObj.inicializar();
 
-	var module = new Object();
-	module.shopObj = shopObj;
-	return module;
+	return shopObj;
 });

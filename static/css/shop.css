@@ -1,7 +1,6 @@
 #shop-container {
 	position: relative;
 	height: 720px;
-	background-image: url('/static/img/backgrounds/shop.png');
 	/* box shadow */
 	-webkit-box-shadow: inset 0px 0px 125px 25px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: inset 0px 0px 125px 25px rgba(0, 0, 0, 0.75);

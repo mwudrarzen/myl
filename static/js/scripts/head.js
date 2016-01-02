@@ -1,21 +1,14 @@
 if(settings.head) {
 	define([], function () {
-		//
+
 		console.log('iniciando head.js');
 
 		var headObj = {
 			inicializar: function () {
 				console.log('inicializando headObj');
-				$('head').append($('<link rel="stylesheet" type="text/css">').attr('href', '/static/css/head.css'));
 				this.renderizar();
 			},
 			renderizar: function () {
-				switch(settings.template) {
-					case 'cards': {
-						$('#core-head-back').data('url', '/');
-						break;
-					}
-				}
 			},
 			botones: {
 				botonActivado: false,
@@ -118,9 +111,6 @@ if(settings.head) {
 
 		headObj.inicializar();
 
-		var module = new Object();
-		module.headObj = headObj;
-		return module;
-		//
+		return headObj;
 	});
 }
