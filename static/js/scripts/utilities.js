@@ -11,11 +11,11 @@ define([], function () {
 		},
 		zumbido: {
 			activo: false,
-			zumbar: function (elemento) {
+			zumbar: function (id) {
 				if(this.activo) return false;
 				this.activo = true;
 				var self = this;
-				$(elemento).animate({
+				$(id).animate({
 					'margin-left': -5,
 					'margin-right': 5
 				}, 100, function () {

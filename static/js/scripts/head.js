@@ -1,4 +1,4 @@
-if(settings.head) {
+if(data.settings.head) {
 	define([], function () {
 
 		console.log('iniciando head.js');

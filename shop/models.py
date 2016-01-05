@@ -5,7 +5,7 @@ from django.db import models
 
 class Icon(models.Model):
 	name = models.CharField(max_length=32, blank=False)
-	cost = models.IntegerField(default=1275, blank=False)
+	price = models.IntegerField(default=1750, blank=False)
 	path = models.CharField(max_length=64, default='/static/img/icons/default.png', blank=False)
 	enabled = models.BooleanField(default=True)
 

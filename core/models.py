@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.contrib.auth.models import User
 from django.db import models
 from shop.models import Icon
@@ -29,16 +31,13 @@ def get_default_decks():
 
 class UserProfile(models.Model):
 	user = models.OneToOneField(User)
-	gold = models.IntegerField(default=1275, blank=False)
+	clp = models.IntegerField(default=5000, blank=False)
 	decks = models.TextField(default=get_default_decks(), blank=False)
-	icons = models.ManyToManyField(Icon)
+	icons = models.ManyToManyField(Icon, null=True)
 
 	def get_decks_in_json(self):
 		decks = eval(self.decks)
 		return json.dumps(decks)
-
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
 @receiver(post_save, sender=User)
 def create_profile_handler(sender, instance, created, **kwargs):

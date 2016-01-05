@@ -3,7 +3,7 @@ define([], function () {
 	console.log('iniciando start.js');
 
 	var startObj = {
-		settings: {
+		ajustes: {
 			backgroundImages: false
 		}
 	};

@@ -8,6 +8,4 @@ urlpatterns = [
     url(r'^logout/', views.logout),
     # Socket.IO test
     url(r'^test/', views.test),
-    # changelogtemp
-    url(r'^changelogtemp/', views.changelogtemp),
 ]

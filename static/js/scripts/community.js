@@ -1,4 +1,4 @@
-if(settings.community) {
+if(data.settings.community) {
 	define([], function () {
 		//
 		console.log('iniciando community.js');

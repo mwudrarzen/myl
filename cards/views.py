@@ -18,15 +18,17 @@ def cards(request):
 		p = paginator.page(paginator.num_pages)
 
 	c = {
-		'settings': {
+		'data': {
+			'settings': {
+				'head': True,
+				'community': False,
+			},
 			'template': 'cards',
-			'head': True,
-			'community': False,
 			'js_include': '',
 		},
 		'page': p,
 	}
-	c.update({'settings_to_json': json.dumps(c['settings'])})
+	c.update({'data_to_json': json.dumps(c['data'])})
 	return render(request, 'cards.html', c)
 
 @login_required(login_url='/login/')
@@ -34,13 +36,15 @@ def card(request, slug):
 	card = get_object_or_404(Card, slug=slug)
 
 	c = {
-		'settings': {
+		'data': {
+			'settings': {
+				'head': True,
+				'community': False,
+			},
 			'template': 'card',
-			'head': True,
-			'community': False,
 			'js_include': '',
 		},
 		'card': card,
 	}
-	c.update({'settings_to_json': json.dumps(c['settings'])})
+	c.update({'data_to_json': json.dumps(c['data'])})
 	return render(request, 'card.html', c)

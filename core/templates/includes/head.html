@@ -3,22 +3,22 @@
 		<!-- left -->
 		<div id="core-head-lc">
 			<ul id="core-head-navigation">
-				{% if settings.template == 'start' %}
+				{% if data.template == 'start' %}
 					<li class="core-head-navigation-option-selected">Inicio</li>
 				{% else %}
 					<li class="core-head-navigation-option url" data-url="/">Inicio</li>
 				{% endif %}
-				{% if settings.template == 'play' %}
+				{% if data.template == 'play' %}
 					<li class="core-head-navigation-option-selected">Jugar</li>
 				{% else %}
 					<li class="core-head-navigation-option url" data-url="/play/">Jugar</li>
 				{% endif %}
-				{% if settings.template == 'shop' %}
+				{% if data.template == 'shop' %}
 					<li class="core-head-navigation-option-selected">Tienda</li>
 				{% else %}
 					<li class="core-head-navigation-option url" data-url="/shop/">Tienda</li>
 				{% endif %}
-				{% if settings.template == 'cards' %}
+				{% if data.template == 'cards' %}
 					<li class="core-head-navigation-option-selected">Cartas</li>
 				{% else %}
 					<li class="core-head-navigation-option url" data-url="/cards/">Cartas</li>
@@ -37,7 +37,7 @@
 			<div id="core-head-notifications" class="core-head-button">
 				<div class="icon core-head-icon core-head-icon-type-a icon-bell"></div>
 			</div>
-			{% if settings.community %}
+			{% if data.settings.community %}
 				<div id="core-head-community" class="core-head-button">
 					<div class="icon core-head-icon core-head-icon-type-a icon-users"></div>
 				</div>
@@ -53,6 +53,7 @@
 		<!-- option content -->
 		<ul id="core-head-user-content">
 			<li class="core-head-user-content-option">Perfil</li>
+			<li class="core-head-user-content-option">Inventario</li>
 			<li class="core-head-user-content-option">Cambiar ícono</li>
 		</ul>
 		<ul id="core-head-more-content">

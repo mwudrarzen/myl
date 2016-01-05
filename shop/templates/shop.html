@@ -5,6 +5,9 @@
 {% block title %}Tienda{% endblock %}
 
 {% block content %}
+	<div id="shop-head">
+		<div id="shop-head-user-clp">${{user.userprofile.clp}}</div>
+	</div>
 	<div id="shop-container">
 		<ul id="shop-navigation">
 			<li id="shop-navigation-option-decks" class="shop-navigation-option" data-cid="#shop-content-decks">
@@ -32,9 +35,9 @@
 			</li>
 		</ul>
 		<div id="shop-content">
-			<div id="shop-content-decks" class="shop-content-class">temp content decks</div>
-			<div id="shop-content-packs" class="shop-content-class">temp content packs</div>
-			<div id="shop-content-icons" class="shop-content-class">
+			<div id="shop-content-decks" class="shop-content-type">temp content decks</div>
+			<div id="shop-content-packs" class="shop-content-type">temp content packs</div>
+			<div id="shop-content-icons" class="shop-content-type">
 				{% for shop_icon in shop_icons %}
 					{% if shop_icon.owned %}
 						{% include 'includes/shop_icons.html' with owned=True %}
@@ -43,7 +46,7 @@
 					{% endif %}
 				{% endfor %}
 			</div>
-			<div id="shop-content-bundles" class="shop-content-class">temp content bundles</div>
+			<div id="shop-content-bundles" class="shop-content-type">temp content bundles</div>
 		</div>
 	</div>
 {% endblock %}

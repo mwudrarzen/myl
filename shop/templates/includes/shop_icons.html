@@ -2,14 +2,14 @@
 	<div class="shop-icon-container shop-icon-owned-container">
 		<div class="shop-icon-name" title="{{shop_icon.name}}">{{shop_icon.name|truncatechars:14}}</div>
 		<img class="shop-icon-image" src="{{shop_icon.path}}">
-		<div class="shop-icon-cost">Adquirido</div>
-		<div class="shop-icon-button">Usar</div>
+		<div class="shop-icon-price">Adquirido</div>
+		<div class="shop-icon-button buy" data-itemtype="icon" data-itemid="{{shop_icon.id}}">Usar</div>
 	</div>
 {% else %}
 	<div class="shop-icon-container">
 		<div class="shop-icon-name" title="{{shop_icon.name}}">{{shop_icon.name|truncatechars:14}}</div>
 		<img class="shop-icon-image" src="{{shop_icon.path}}">
-		<div class="shop-icon-cost">{{shop_icon.cost}}</div>
-		<div class="shop-icon-button">Comprar</div>
+		<div class="shop-icon-price">${{shop_icon.price}}</div>
+		<div class="shop-icon-button buy" data-itemtype="icon" data-itemid="{{shop_icon.id}}">Comprar</div>
 	</div>
 {% endif %}

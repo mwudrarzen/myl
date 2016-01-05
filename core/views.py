@@ -22,15 +22,17 @@ def signup(request):
 		form = UserCreationForm()
 
 	c = {
-		'settings': {
+		'data': {
+			'settings': {
+				'head': False,
+				'community': False,
+			},
 			'template': 'signup',
-			'head': False,
-			'community': False,
 			'js_include': '',
 		},
 		'form': form,
 	}
-	c.update({'settings_to_json': json.dumps(c['settings'])})
+	c.update({'data_to_json': json.dumps(c['data'])})
 	return render(request, 'signup.html', c)
 
 def login(request):
@@ -51,15 +53,17 @@ def login(request):
 		form = AuthenticationForm()
 
 	c = {
-		'settings': {
+		'data': {
+			'settings': {
+				'head': False,
+				'community': False,
+			},
 			'template': 'login',
-			'head': False,
-			'community': False,
 			'js_include': '',
 		},
 		'form': form,
 	}
-	c.update({'settings_to_json': json.dumps(c['settings'])})
+	c.update({'data_to_json': json.dumps(c['data'])})
 	return render(request, 'login.html', c)
 
 @login_required(login_url='/login/')
@@ -70,14 +74,16 @@ def logout(request):
 @login_required(login_url='/login/')
 def start(request):
 	c = {
-		'settings': {
+		'data': {
+			'settings': {
+				'head': True,
+				'community': True,
+			},
 			'template': 'start',
-			'head': True,
-			'community': True,
 			'js_include': 'scripts/start',
 		},
 	}
-	c.update({'settings_to_json': json.dumps(c['settings'])})
+	c.update({'data_to_json': json.dumps(c['data'])})
 	return render(request, 'start.html', c)
 
 ##### Testing Socket.IO + NodeJS + Redis + Django #####
@@ -95,28 +101,16 @@ def test(request):
 	redis.setex(key, 86400, value)
 
 	c = {
-		'settings': {
+		'data': {
+			'settings': {
+				'head': False,
+				'community': False,
+			},
 			'template': 'test',
-			'head': False,
-			'community': False,
 			'js_include': 'scripts/test',
 		},
 	}
-	c.update({'settings_to_json': json.dumps(c['settings'])})
+	c.update({'data_to_json': json.dumps(c['data'])})
 	response = render(request, 'test.html', c)
 	response.set_cookie(key='nodejskey', value=token, max_age=86400, domain=None, secure=None)
 	return response
-
-#test changelogtemporal
-
-def changelogtemp(request):
-	c = {
-		'settings': {
-			'template': 'changelogtemp',
-			'head': True,
-			'community': False,
-			'js_include': '',
-		},
-	}
-	c.update({'settings_to_json': json.dumps(c['settings'])})
-	return render(request, 'changelogtemp.html', c)

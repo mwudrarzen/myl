@@ -1,4 +1,4 @@
-define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settings.js_include, 'scripts/utilities'],
+define(['jqueryui', 'waitforimages', 'scripts/head', 'scripts/community', data.js_include, 'scripts/utilities'],
 	function (jQueryUI, waitForImages, headModule, communityModule, includeModule, utilitiesModule) {
 
 	console.log('iniciando main.js');
@@ -15,7 +15,7 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 			coreContent: {
 				el: $('#core-content'),
 				actualizar: function() {
-					if(settings.head) {
+					if(data.settings.head) {
 						$(this.el).css('min-height', $(window).height() - 50);
 					}
 					else {
@@ -38,8 +38,8 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 		cargarImagenes: function () {
 			var self = this;
 			$('body').waitForImages(function () {
-				if(settings.js_include != '') {
-					if(includeModule.settings.backgroundImages) {
+				if(data.js_include != '') {
+					if(includeModule.ajustes.backgroundImages) {
 						includeModule.cargarBackgroundImages(function () {
 							self.finalizar();
 						});
@@ -50,7 +50,7 @@ define(['jqueryui', 'waitForImages', 'scripts/head', 'scripts/community', settin
 			});
 		},
 		finalizar: function () {
-			if(settings.head) $('#core-head').show();
+			if(data.settings.head) $('#core-head').show();
 			$('#core-container').show();
 			$('#loader').fadeOut(this.ajustes.fadeOutDuration, function () {
 				$(this).remove();

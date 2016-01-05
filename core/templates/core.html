@@ -11,18 +11,18 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/core.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/loader.css' %}">
-		{% if settings.head %}
+		{% if data.settings.head %}
 			<link rel="stylesheet" type="text/css" href="{% static 'css/head.css' %}">
 		{% endif %}
-		{% if settings.community %}
+		{% if data.settings.community %}
 			<link rel="stylesheet" type="text/css" href="{% static 'css/community.css' %}">
 		{% endif %}
 		{% block css_files %}{% endblock %}
 		<script src="{% static 'js/libraries/require.js' %}"></script>
 		<script>
-			var settings = false;
-			{% if settings_to_json %}
-				settings = {{settings_to_json|safe}};
+			var data = false;
+			{% if data_to_json %}
+				data = {{data_to_json|safe}};
 			{% endif %}
 			requirejs.config({
 				baseUrl: '{% static "js/" %}',
@@ -30,11 +30,25 @@
 				paths: {
 					jquery: 'libraries/jquery-2.1.4.min',
 					jqueryui: 'libraries/jquery-ui-1.11.4/jquery-ui.min',
-					waitForImages: 'libraries/jquery.waitforimages.min'
+					waitforimages: 'libraries/jquery.waitforimages.min',
+					jscookie: 'libraries/js.cookie'
 				}
 			});
 			requirejs(['jquery'], function(){
-				$(document).ready(function(){
+				$(document).ready(function () {
+					requirejs(['jscookie'], function (jsCookie) {
+						var csrftoken = jsCookie.get('csrftoken');
+						function csrfSafeMethod (method) {
+							return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+						}
+						$.ajaxSetup({
+							beforeSend: function (xhr, settings) {
+								if(!csrfSafeMethod(settings.type) && !this.crossDomain) {
+									xhr.setRequestHeader("X-CSRFToken", csrftoken);
+								}
+							}
+						});
+					});
 					requirejs(['main']);
 				});
 			});
@@ -42,15 +56,16 @@
 	</head>
 	<body>
 		{% include 'includes/loader.html' %}
-		{% if settings.head %}
+		{% if data.settings.head %}
 			{% include 'includes/head.html' %}
 		{% endif %}
-		{% if settings.community %}
+		{% if data.settings.community %}
 			{% include 'includes/community.html' %}
 		{% endif %}
 		<div id="core-container">
 			<div id="core-content">
 				{% block content %}{% endblock %}
+				<footer id="core-footer"></footer>
 			</div>
 		</div>
 	</body>
