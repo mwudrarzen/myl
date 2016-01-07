@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/core.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/loader.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/modals.css' %}">
 		{% if data.settings.head %}
 			<link rel="stylesheet" type="text/css" href="{% static 'css/head.css' %}">
 		{% endif %}
@@ -56,6 +57,7 @@
 	</head>
 	<body>
 		{% include 'includes/loader.html' %}
+		{% include 'includes/modals.html' %}
 		{% if data.settings.head %}
 			{% include 'includes/head.html' %}
 		{% endif %}

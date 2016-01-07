@@ -1,6 +1,4 @@
-define(['jqueryui', 'waitforimages', 'scripts/head', 'scripts/community', data.js_include, 'scripts/utilities'],
-	function (jQueryUI, waitForImages, headModule, communityModule, includeModule, utilitiesModule) {
-
+define(['jqueryui', 'waitforimages', 'scripts/head', 'scripts/community', data.js_include, 'scripts/utilities'], function (jQueryUI, waitForImages, headModule, communityModule, includeModule, utilitiesModule) {
 	console.log('iniciando main.js');
 
 	var mainObj = {

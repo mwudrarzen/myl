@@ -1,65 +1,48 @@
 <div id="core-head">
 	<div id="core-head-content">
-		<!-- left -->
-		<div id="core-head-lc">
+		<div id="core-head-content-left">
 			<ul id="core-head-navigation">
 				{% if data.template == 'start' %}
-					<li class="core-head-navigation-option-selected">Inicio</li>
+					<li class="core-head-navigation-option core-head-navigation-option-selected">Inicio</li>
 				{% else %}
 					<li class="core-head-navigation-option url" data-url="/">Inicio</li>
 				{% endif %}
 				{% if data.template == 'play' %}
-					<li class="core-head-navigation-option-selected">Jugar</li>
+					<li class="core-head-navigation-option core-head-navigation-option-selected">Jugar</li>
 				{% else %}
 					<li class="core-head-navigation-option url" data-url="/play/">Jugar</li>
 				{% endif %}
 				{% if data.template == 'shop' %}
-					<li class="core-head-navigation-option-selected">Tienda</li>
+					<li class="core-head-navigation-option core-head-navigation-option-selected">Tienda</li>
 				{% else %}
 					<li class="core-head-navigation-option url" data-url="/shop/">Tienda</li>
 				{% endif %}
 				{% if data.template == 'cards' %}
-					<li class="core-head-navigation-option-selected">Cartas</li>
+					<li class="core-head-navigation-option core-head-navigation-option-selected">Cartas</li>
 				{% else %}
 					<li class="core-head-navigation-option url" data-url="/cards/">Cartas</li>
 				{% endif %}
+				<div class="clear"></div>
 			</ul>
 		</div>
-		<!-- /left -->
-		<!-- right (inverso) -->
-		<div id="core-head-rc">
-			<div id="core-head-more" class="core-head-button">
-				<div class="icon core-head-icon core-head-icon-type-a icon-menu3"></div>
-			</div>
-			<div id="core-head-messages" class="core-head-button">
-				<div class="icon core-head-icon core-head-icon-type-a icon-mail3"></div>
-			</div>
-			<div id="core-head-notifications" class="core-head-button">
-				<div class="icon core-head-icon core-head-icon-type-a icon-bell"></div>
-			</div>
-			{% if data.settings.community %}
-				<div id="core-head-community" class="core-head-button">
-					<div class="icon core-head-icon core-head-icon-type-a icon-users"></div>
-				</div>
-			{% endif %}
-			<div id="core-head-user" class="core-head-button">
-				<img id="core-head-user-avatar" src="/static/img/icons/default.png">
-				<div id="core-head-user-name">
-					{{user.username}}
-				</div>
-			</div>
+		<div id="core-head-content-right">
+			<ul id="core-head-buttons">
+				{% if data.settings.community %}
+					<li id="core-head-button-community" class="core-head-button">
+						<div class="icon core-head-button-icon icon-users"></div>
+					</li>
+				{% endif %}
+				<li id="core-head-button-notifications" class="core-head-button">
+					<div class="icon core-head-button-icon icon-bell"></div>
+				</li>
+				<li id="core-head-button-messages" class="core-head-button">
+					<div class="icon core-head-button-icon icon-mail3"></div>
+				</li>
+				<li id="core-head-button-more" class="core-head-button">
+					<div class="icon core-head-button-icon icon-menu3"></div>
+				</li>
+				<div class="clear"></div>
+			</ul>
 		</div>
-		<!-- /right -->
-		<!-- option content -->
-		<ul id="core-head-user-content">
-			<li class="core-head-user-content-option">Perfil</li>
-			<li class="core-head-user-content-option">Inventario</li>
-			<li class="core-head-user-content-option">Cambiar ícono</li>
-		</ul>
-		<ul id="core-head-more-content">
-			<li class="core-head-more-content-option">Ajustes</li>
-			<li class="core-head-more-content-option url" data-url="/logout/">Cerrar sesión</li>
-		</ul>
-		<!-- /option content -->
 	</div>
 </div>

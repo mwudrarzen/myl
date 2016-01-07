@@ -3,211 +3,116 @@ body {
 }
 
 #core-head {
-	display: none;
 	background-color: rgb(50, 50, 50);
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
+	display: none;
 	height: 50px;
+	left: 0;
+	min-width: 1280px;
+	position: fixed;
+	right: 0;
+	top: 0;
 	z-index: 10000;
-	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75)
+	/* box shadow */
+	-moz-box-shadow: 0x 0px 5px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 0x 0px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 #core-head-content {
-	position: absolute;
+	height: inherit;
+	margin: 0 auto;
+	position: relative;
 	width: 1230px;
-	height: 100%;
-	left: calc(50% - 615px);
 }
 
-#core-head-lc {
-	float: left;
+#core-head-content-left {
+	left: 0;
+	position: absolute;
 }
 
-#core-head-navigation {
-	float: left;
-}
+#core-head-navigation {}
 
 .core-head-navigation-option {
 	float: left;
-	width: 75px;
 	height: 50px;
+	width: 75px;
 	/* font */
 	color: rgb(225, 225, 225);
-	text-align: center;
-	line-height: 50px;
-	font-size: 16px;
 	font-family: 'Exo 2', sans-serif;
+	font-size: 16px;
 	font-weight: 300;
+	line-height: 50px;
+	text-align: center;
 }
 
 .core-head-navigation-option:hover {
 	background-color: rgb(60, 60, 60);
-	color: rgb(250, 250, 250);
 }
 
 .core-head-navigation-option-selected {
-	float: left;
-	width: 75px;
-	height: 50px;
-	background-color: rgb(40, 40, 40);
+	background-color: rgb(40, 40, 40) !important;
 	/* font */
-	color: rgb(150, 200, 50);
-	text-align: center;
-	line-height: 50px;
-	font-size: 16px;
-	font-family: 'Exo 2', sans-serif;
-	font-weight: 300;
+	color: rgb(225, 175, 0);
 }
 
-#core-head-rc {
-	float: right;
-}
-
-#core-head-user {
-	position: relative;
-	float: right;
-	height: 50px;
-	cursor: pointer;
-}
-
-#core-head-user:hover > #core-head-user-name {
-	color: rgb(250, 250, 250);
-}
-
-/*
-#core-head-user:hover > .core-head-user-name-selected {
-	color: rgb(160, 210, 50) !important;
-}
-*/
-
-#core-head-user-avatar {
-	float: left;
-	margin-top: 10px;
-	margin-left: 10px;
-	width: 30px;
-	height: 30px;
-	cursor: pointer;
-	/* box shadow */
-	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
-#core-head-user-name {
-	float: left;
-	margin-top: 10px;
-	margin-left: 10px;
-	margin-right: 10px;
-	height: 30px;
-	cursor: pointer;
-	/* font */
-	color: rgb(225, 225, 225);
-	line-height: 30px;
-	font-size: 16px;
-	font-family: 'Exo 2', sans-serif;
-	font-weight: 300;
-}
-
-.core-head-user-name-selected {
-	color: rgb(150, 200, 50) !important;
-}
-
-#core-head-user-content {
-	display: none;
+#core-head-content-right {
 	position: absolute;
-	top: 55px;
-	background-color: rgb(40, 40, 40);
+	right: 0;
 }
 
-.core-head-user-content-option {
-	width: 150px;
-	box-sizing: border-box;
-	padding-left: 10px;
-	height: 30px;
+#core-head-buttons {}
+
+.core-head-button {
+	float: left;
+	height: 50px;
+}
+
+.core-head-button:hover {
+	background-color: rgb(60, 60, 60);
+}
+
+.core-head-button-selected {
+	background-color: rgb(40, 40, 40) !important;
+}
+
+.core-head-button-selected > .core-head-button-icon {
+	color: rgb(225, 175, 0);
+}
+
+#core-head-button-community {
+	width: 50px;
+}
+
+#core-head-button-notifications {
+	width: 50px;
+}
+
+#core-head-button-messages {
+	width: 50px;
+}
+
+#core-head-button-more {
+	width: 50px;
+}
+
+.core-head-button-icon {
 	cursor: pointer;
+	height: 50px;
+	width: 50px;
 	/* font */
 	color: rgb(225, 225, 225);
-	line-height: 30px;
-	font-size: 14px;
-	font-family: 'Open Sans', sans-serif;
-}
-
-.core-head-user-content-option:hover {
-	background-color: rgb(50, 50, 50);
-	color: rgb(250, 250, 250);
-}
-
-#core-head-notifications {
-	position: relative;
-	float: right;
-	width: 50px;
-	height: 50px;
-}
-
-#core-head-messages {
-	float: right;
-	width: 50px;
-	height: 50px;
-}
-
-#core-head-more {
-	position: relative;
-	float: right;
-	width: 50px;
-	height: 50px;
-}
-
-#core-head-more-content {
-	display: none;
-	position: absolute;
-	top: 55px;
-	background-color: rgb(40, 40, 40);
-}
-
-.core-head-more-content-option {
-	width: 150px;
-	box-sizing: border-box;
-	padding-left: 10px;
-	height: 30px;
-	cursor: pointer;
-	/* font */
-	color: rgb(225, 225, 225);
-	line-height: 30px;
-	font-size: 14px;
-	font-family: 'Open Sans', sans-serif;
-}
-
-.core-head-more-content-option:hover {
-	background-color: rgb(50, 50, 50);
-	color: rgb(250, 250, 250);
-}
-
-.core-head-icon {
-	color: rgb(225, 225, 225);
-	cursor: pointer;
-}
-
-.core-head-icon:hover {
-	color: rgb(250, 250, 250);
-}
-
-.core-head-icon-selected {
-	color: rgb(150, 200, 50);
-	cursor: pointer;
-}
-
-/*
-.core-head-icon-selected:hover {
-	color: rgb(160, 210, 50);
-}
-*/
-
-.core-head-icon-type-a {
-	width: 50px;
-	height: 50px;
+	font-size: 16px;
 	line-height: 50px;
 	text-align: center;
+}
+
+.core-head-button-icon-selected {
+	cursor: pointer;
+	height: 50px;
+	width: 50px;
+	/* font */
+	color: rgb(225, 175, 0);
 	font-size: 16px;
+	line-height: 50px;
+	text-align: center;
 }

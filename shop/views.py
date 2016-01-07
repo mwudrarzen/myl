@@ -20,7 +20,7 @@ def shop(request):
 				'community': False,
 			},
 			'template': 'shop',
-			'js_include': 'scripts/shop',
+			'js_include': '',
 		},
 		'shop_icons': shop_icons,
 	}

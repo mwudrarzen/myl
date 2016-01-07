@@ -1,19 +1,16 @@
-if(data.settings.community) {
-	define([], function () {
-		//
-		console.log('iniciando community.js');
+define([], function () {
+	console.log('iniciando community.js');
 
-		var communityObj = {
-			inicializar: function () {
-				console.log('inicializando communityObj');
-				this.renderizar();
-			},
-			renderizar: function () {
-			}
-		};
+	var communityObj = {
+		inicializar: function () {
+			console.log('inicializando communityObj');
+			this.renderizar();
+		},
+		renderizar: function () {
+		}
+	};
 
-		communityObj.inicializar();
+	communityObj.inicializar();
 
-		return communityObj;
-	});
-}
+	return communityObj;
+});
