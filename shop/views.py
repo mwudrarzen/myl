@@ -25,7 +25,7 @@ def shop(request):
 		'shop_icons': shop_icons,
 	}
 	c.update({'data_to_json': json.dumps(c['data'])})
-	return render(request, 'shop.html', c)
+	return render(request, 'shopv2.html', c)
 
 def buy(request):
 	if request.method == 'POST':

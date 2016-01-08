@@ -15,9 +15,8 @@ body {
 
 #core-content {
 	background-color: rgb(225, 225, 225);
-	box-sizing: border-box;
 	margin: 0 auto;
-	padding: 10px;
+	position: relative;
 	width: 1230px;
 }
 
