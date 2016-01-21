@@ -3,25 +3,50 @@
 		<div id="core-head-content-left">
 			<ul id="core-head-navigation">
 				{% if data.template == 'start' %}
-					<li class="core-head-navigation-option core-head-navigation-option-selected">Inicio</li>
+					<li class="core-head-navigation-option core-head-navigation-option-selected">
+						<div class="core-head-navigation-option-separator-tb"></div>
+						Inicio
+					</li>
 				{% else %}
-					<li class="core-head-navigation-option url" data-url="/">Inicio</li>
+					<li class="core-head-navigation-option url" data-url="/">
+						<div class="core-head-navigation-option-separator-ta"></div>
+						Inicio
+					</li>
 				{% endif %}
 				{% if data.template == 'play' %}
-					<li class="core-head-navigation-option core-head-navigation-option-selected">Jugar</li>
+					<li class="core-head-navigation-option core-head-navigation-option-selected">
+						<div class="core-head-navigation-option-separator-tb"></div>
+						Jugar
+					</li>
 				{% else %}
-					<li class="core-head-navigation-option url" data-url="/play/">Jugar</li>
+					<li class="core-head-navigation-option url" data-url="/play/">
+						<div class="core-head-navigation-option-separator-ta"></div>
+						Jugar
+					</li>
 				{% endif %}
 				{% if data.template == 'shop' %}
-					<li class="core-head-navigation-option core-head-navigation-option-selected">Tienda</li>
+					<li class="core-head-navigation-option core-head-navigation-option-selected">
+						<div class="core-head-navigation-option-separator-tb"></div>
+						Tienda
+					</li>
 				{% else %}
-					<li class="core-head-navigation-option url" data-url="/shop/">Tienda</li>
+					<li class="core-head-navigation-option url" data-url="/shop/">
+						<div class="core-head-navigation-option-separator-ta"></div>
+						Tienda
+					</li>
 				{% endif %}
 				{% if data.template == 'cards' %}
-					<li class="core-head-navigation-option core-head-navigation-option-selected">Cartas</li>
+					<li class="core-head-navigation-option core-head-navigation-option-selected">
+						<div class="core-head-navigation-option-separator-tb"></div>
+						Cartas
+					</li>
 				{% else %}
-					<li class="core-head-navigation-option url" data-url="/cards/">Cartas</li>
+					<li class="core-head-navigation-option url" data-url="/cards/">
+						<div class="core-head-navigation-option-separator-ta"></div>
+						Cartas
+					</li>
 				{% endif %}
+				<li class="core-head-navigation-option-separator-ta"></li>
 				<div class="clear"></div>
 			</ul>
 		</div>

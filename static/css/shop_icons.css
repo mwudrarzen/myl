@@ -1,76 +1,13 @@
 .shop-icon-container {
 	position: relative;
 	float: left;
-	width: 120px;
+	width: 150px;
 	height: 200px;
-	margin-top: 17.5px; /* 670 c - 200 * 3 = 70 / 4 */
-	margin-left: 64.16666666666667px; /* 985 c - 120 * 5 = 385 / 6 */
+	margin-top: 25px;
+	margin-left: 25px;
 	background-color: rgb(225, 225, 225);
-	box-sizing: border-box;
-	/* box shadow */
-	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .shop-icon-owned-container {
 	background-color: rgb(200, 200, 200);
-}
-
-.shop-icon-name {
-	height: 30px;
-	/* font */
-	font-size: 14px;
-	font-family: 'Open Sans', sans-serif;
-	text-align: center;
-	line-height: 30px;
-	color: rgb(40, 40, 40);
-}
-
-.shop-icon-image {
-	position: absolute;
-	display: block;
-	top: 30px;
-	left: 10px;
-	/* box shadow */
-	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
-.shop-icon-price {
-	position: absolute;
-	top: 130px;
-	left: 10px;
-	width: 100px;
-	height: 30px;
-	/* font */
-	line-height: 30px;
-	text-align: center;
-	font-size: 14px;
-	font-family: 'Open Sans', sans-serif;
-	color: rgb(40, 40, 40);
-}
-
-.shop-icon-button {
-	position: absolute;
-	width: 100px;
-	height: 30px;
-	top: 160px;
-	left: 10px;
-	box-sizing: border-box;
-	background-color: rgb(50, 50, 50);
-	cursor: pointer;
-	/* font */
-	line-height: 30px;
-	font-size: 14px;
-	font-family: 'Open Sans', sans-serif;
-	text-align: center;
-	color: rgb(225, 225, 225);
-}
-
-.shop-icon-button:hover {
-	background-color: rgb(60, 60, 60);
-	/* font */
-	color: rgb(250, 250, 250);
 }

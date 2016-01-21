@@ -1,5 +1,5 @@
 body {
-	padding-top: 50px;
+	padding-top: 75px;
 }
 
 #core-head {
@@ -7,22 +7,21 @@ body {
 	display: none;
 	height: 50px;
 	left: 0;
-	min-width: 1280px;
 	position: fixed;
 	right: 0;
 	top: 0;
 	z-index: 10000;
 	/* box shadow */
-	-moz-box-shadow: 0x 0px 5px 0px rgba(0, 0, 0, 0.75);
-	-webkit-box-shadow: 0x 0px 5px 0px rgba(0, 0, 0, 0.75);
-	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 4px 1px rgb(0, 0, 0);
+	-webkit-box-shadow: 0px 0px 4px 1px rgb(0, 0, 0);
+	box-shadow: 0px 0px 4px 1px rgb(0, 0, 0);
 }
 
 #core-head-content {
 	height: inherit;
 	margin: 0 auto;
 	position: relative;
-	width: 1230px;
+	width: 1152px;
 }
 
 #core-head-content-left {
@@ -37,22 +36,40 @@ body {
 	height: 50px;
 	width: 75px;
 	/* font */
-	color: rgb(225, 225, 225);
+	color: rgb(175, 175, 175);
 	font-family: 'Exo 2', sans-serif;
 	font-size: 16px;
-	font-weight: 300;
 	line-height: 50px;
 	text-align: center;
+	text-shadow: 0 -1px rgb(28, 28, 28);
 }
 
 .core-head-navigation-option:hover {
-	background-color: rgb(60, 60, 60);
+	background-color: rgb(55, 55, 55);
+}
+
+.core-head-navigation-option:hover > .core-head-navigation-option-separator-ta {
+	background-color: rgb(67, 67, 67);
 }
 
 .core-head-navigation-option-selected {
-	background-color: rgb(40, 40, 40) !important;
-	/* font */
-	color: rgb(225, 175, 0);
+	background-color: rgb(45, 45, 45) !important;
+}
+
+.core-head-navigation-option-separator-ta {
+	background-color: rgb(62, 62, 62);
+	border-left: 1px solid rgb(28, 28, 28);
+	float: left;
+	height: 50px;
+	width: 2px;
+}
+
+.core-head-navigation-option-separator-tb {
+	background-color: rgb(57, 57, 57);
+	border-left: 1px solid rgb(28, 28, 28);
+	float: left;
+	height: 50px;
+	width: 2px;
 }
 
 #core-head-content-right {
@@ -73,10 +90,6 @@ body {
 
 .core-head-button-selected {
 	background-color: rgb(40, 40, 40) !important;
-}
-
-.core-head-button-selected > .core-head-button-icon {
-	color: rgb(225, 175, 0);
 }
 
 #core-head-button-community {
@@ -100,19 +113,9 @@ body {
 	height: 50px;
 	width: 50px;
 	/* font */
-	color: rgb(225, 225, 225);
+	color: rgb(175, 175, 175);
 	font-size: 16px;
 	line-height: 50px;
 	text-align: center;
-}
-
-.core-head-button-icon-selected {
-	cursor: pointer;
-	height: 50px;
-	width: 50px;
-	/* font */
-	color: rgb(225, 175, 0);
-	font-size: 16px;
-	line-height: 50px;
-	text-align: center;
+	text-shadow: 0 -1px rgb(28, 28, 28);
 }

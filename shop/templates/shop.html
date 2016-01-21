@@ -5,46 +5,39 @@
 {% block title %}Tienda{% endblock %}
 
 {% block content %}
-	<div id="shop-container">
+	<div id="shop-left-column">
 		<ul id="shop-navigation">
-			<li id="shop-navigation-option-decks" class="shop-navigation-option" data-cid="#shop-content-decks">
-				<div class="shop-navigation-option-underline shop-navigation-option-underline-top"></div>
-				Mazos
-				<div class="shop-navigation-option-underline shop-navigation-option-underline-bottom"></div>
+			<li class="shop-navigation-option button-ta-container">
+				<div class="button-ta-content">
+					<div class="shop-navigation-option-text">Mazos de cartas</div>
+				</div>
 			</li>
-			<li class="s25px"></li>
-			<li id="shop-navigation-option-packs" class="shop-navigation-option" data-cid="#shop-content-packs">
-				<div class="shop-navigation-option-underline shop-navigation-option-underline-top"></div>
-				Sobres
-				<div class="shop-navigation-option-underline shop-navigation-option-underline-bottom"></div>
+			<li class="vs10px"></li>
+			<li class="shop-navigation-option button-ta-container">
+				<div class="button-ta-content">
+					<div class="shop-navigation-option-text">Sobres de cartas</div>
+				</div>
 			</li>
-			<li class="s25px"></li>
-			<li id="shop-navigation-option-icons" class="shop-navigation-option" data-cid="#shop-content-icons">
-				<div class="shop-navigation-option-underline shop-navigation-option-underline-top"></div>
-				Íconos
-				<div class="shop-navigation-option-underline shop-navigation-option-underline-bottom"></div>
+			<li class="vs10px"></li>
+			<li class="shop-navigation-option button-ta-container">
+				<div class="button-ta-content">
+					<div class="shop-navigation-option-text">Íconos</div>
+				</div>
 			</li>
-			<li class="s25px"></li>
-			<li id="shop-navigation-option-bundles" class="shop-navigation-option" data-cid="#shop-content-bundles">
-				<div class="shop-navigation-option-underline shop-navigation-option-underline-top"></div>
-				Paquetes
-				<div class="shop-navigation-option-underline shop-navigation-option-underline-bottom"></div>
+			<li class="vs10px"></li>
+			<li class="shop-navigation-option button-ta-container">
+				<div class="button-ta-content">
+					<div class="shop-navigation-option-text">Paquetes</div>
+				</div>
+			</li>
+			<li class="vs10px"></li>
+			<li class="shop-navigation-option button-ta-container">
+				<div class="button-ta-content">
+					<div class="shop-navigation-option-text">Cuenta</div>
+				</div>
 			</li>
 		</ul>
-		<div id="shop-content">
-			<div id="shop-content-decks" class="shop-content-type">temp content decks</div>
-			<div id="shop-content-packs" class="shop-content-type">temp content packs</div>
-			<div id="shop-content-icons" class="shop-content-type">
-				{% for shop_icon in shop_icons %}
-					{% if shop_icon.owned %}
-						{% include 'includes/shop_icons.html' with owned=True %}
-					{% else %}
-						{% include 'includes/shop_icons.html' with owned=False %}
-					{% endif %}
-				{% endfor %}
-			</div>
-			<div id="shop-content-bundles" class="shop-content-type">temp content bundles</div>
-		</div>
+		<div id="shop-left-column-sb"></div>
 	</div>
 {% endblock %}
 

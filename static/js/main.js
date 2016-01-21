@@ -14,7 +14,7 @@ define(['jqueryui', 'waitforimages', 'scripts/head', 'scripts/community', data.j
 				el: $('#core-content'),
 				actualizar: function() {
 					if(data.settings.head) {
-						$(this.el).css('min-height', $(window).height() - 50);
+						$(this.el).css('min-height', $(window).height() - 75);
 					}
 					else {
 						$(this.el).css('min-height', $(window).height());
@@ -26,8 +26,8 @@ define(['jqueryui', 'waitforimages', 'scripts/head', 'scripts/community', data.j
 
 	var loaderObj = {
 		ajustes: {
-			fadeInDuration: 750,
-			fadeOutDuration: 750
+			fadeInDuration: 500,
+			fadeOutDuration: 500
 		},
 		inicializar: function () {
 			console.log('inicializando loaderObj');

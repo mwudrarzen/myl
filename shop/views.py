@@ -20,12 +20,12 @@ def shop(request):
 				'community': False,
 			},
 			'template': 'shop',
-			'js_include': '',
+			'js_include': 'scripts/shop',
 		},
 		'shop_icons': shop_icons,
 	}
 	c.update({'data_to_json': json.dumps(c['data'])})
-	return render(request, 'shopv2.html', c)
+	return render(request, 'shop.html', c)
 
 def buy(request):
 	if request.method == 'POST':
