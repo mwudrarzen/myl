@@ -12,9 +12,12 @@ define(['scripts/modals', 'scripts/utilities'], function (modalsModule, utilitie
 		renderizar: function () {
 		},
 		cargarBackgroundImages: function (callback) {
+			/*
 			utilitiesModule.cargarBackgroundImage('/static/img/backgrounds/bgimg.png', $('bodys'), function () {
 				callback();
 			});
+			*/
+			callback();
 		}
 	};
 
