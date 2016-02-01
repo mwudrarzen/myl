@@ -7,6 +7,7 @@ define([], function () {
 			this.renderizar();
 		},
 		renderizar: function () {
+			//
 		}
 	};
 

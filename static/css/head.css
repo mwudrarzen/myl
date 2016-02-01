@@ -1,121 +1,17 @@
-body {
-	padding-top: 75px;
-}
-
 #core-head {
-	background-color: rgb(50, 50, 50);
-	display: none;
-	height: 50px;
-	left: 0;
 	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: 10000;
-	/* box shadow */
-	-moz-box-shadow: 0px 0px 4px 1px rgb(0, 0, 0);
-	-webkit-box-shadow: 0px 0px 4px 1px rgb(0, 0, 0);
-	box-shadow: 0px 0px 4px 1px rgb(0, 0, 0);
-}
-
-#core-head-content {
-	height: inherit;
-	margin: 0 auto;
-	position: relative;
+	left: calc(50% - 576px);
 	width: 1152px;
+	height: 65px;
+	background-color: rgb(50, 50, 50);
+	/* box shadow */
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.95);
+	-moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.95);
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.95);
 }
 
-#core-head-content-left {
-	left: 0;
-	position: absolute;
-}
-
-#core-head-navigation {}
-
-.core-head-navigation-option {
-	float: left;
-	height: 50px;
-	width: 75px;
-	/* font */
-	color: rgb(175, 175, 175);
-	font-family: 'Exo 2', sans-serif;
-	font-size: 16px;
-	line-height: 50px;
-	text-align: center;
-	text-shadow: 0 -1px rgb(28, 28, 28);
-}
-
-.core-head-navigation-option:hover {
-	background-color: rgb(55, 55, 55);
-}
-
-.core-head-navigation-option:hover > .core-head-navigation-option-separator-ta {
-	background-color: rgb(67, 67, 67);
-}
-
-.core-head-navigation-option-selected {
-	background-color: rgb(45, 45, 45) !important;
-}
-
-.core-head-navigation-option-separator-ta {
-	background-color: rgb(62, 62, 62);
-	border-left: 1px solid rgb(28, 28, 28);
-	float: left;
-	height: 50px;
-	width: 2px;
-}
-
-.core-head-navigation-option-separator-tb {
-	background-color: rgb(57, 57, 57);
-	border-left: 1px solid rgb(28, 28, 28);
-	float: left;
-	height: 50px;
-	width: 2px;
-}
-
-#core-head-content-right {
-	position: absolute;
-	right: 0;
-}
-
-#core-head-buttons {}
-
-.core-head-button {
-	float: left;
-	height: 50px;
-}
-
-.core-head-button:hover {
-	background-color: rgb(60, 60, 60);
-}
-
-.core-head-button-selected {
-	background-color: rgb(40, 40, 40) !important;
-}
-
-#core-head-button-community {
-	width: 50px;
-}
-
-#core-head-button-notifications {
-	width: 50px;
-}
-
-#core-head-button-messages {
-	width: 50px;
-}
-
-#core-head-button-more {
-	width: 50px;
-}
-
-.core-head-button-icon {
-	cursor: pointer;
-	height: 50px;
-	width: 50px;
-	/* font */
-	color: rgb(175, 175, 175);
-	font-size: 16px;
-	line-height: 50px;
-	text-align: center;
-	text-shadow: 0 -1px rgb(28, 28, 28);
+#core-head-lc {
+	width: 250px;
+	height: 100%;
+	background-color: brown;
 }
