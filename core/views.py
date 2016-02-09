@@ -21,7 +21,7 @@ def signup(request):
 	else:
 		form = UserCreationForm()
 
-	return render(request, 'signup.html', {'form': form})
+	return render(request, 'signup.html', {'core_content': False, 'form': form})
 
 def login(request):
 	if request.user.is_authenticated():
@@ -40,7 +40,7 @@ def login(request):
 	else:
 		form = AuthenticationForm()
 
-	return render(request, 'login.html', {'form': form})
+	return render(request, 'login.html', {'core_content': False, 'form': form})
 
 @login_required(login_url='/login/')
 def logout(request):

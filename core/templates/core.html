@@ -44,6 +44,9 @@
 	</head>
 	<body>
 		{% include 'includes/loader.html' %}
+		{% if not core_content %}
+			{% block content %}{% endblock %}
+		{% else %}
 		<div id="core-head">
 			<div id="core-head-content-left">
 				<div id="core-head-button-menu" class="icon icon-menu3 core-head-button"></div>
@@ -67,5 +70,6 @@
 			</div>
 		</div>
 		<div id="core-content"></div>
+		{% endif %}
 	</body>
 </html>
