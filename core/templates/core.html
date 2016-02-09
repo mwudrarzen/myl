@@ -44,7 +44,7 @@
 	</head>
 	<body>
 		{% include 'includes/loader.html' %}
-		{% if not core_content %}
+		{% if ind_page %}
 			{% block content %}{% endblock %}
 		{% else %}
 		<div id="core-head">
