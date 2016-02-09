@@ -16,8 +16,7 @@ def shop(request):
 	c = {
 		'data': {
 			'settings': {
-				'head': True,
-				'community': False,
+				'core_content': True,
 			},
 			'template': 'shop',
 			'js_include': 'scripts/shop',
@@ -59,11 +58,11 @@ def buy(request):
 						return HttpResponse(json.dumps(response), content_type='application/json')
 					except:
 						pass
-					if request.user.userprofile.clp >= target_icon.price:
-						request.user.userprofile.clp = request.user.userprofile.clp - target_icon.price
+					if request.user.userprofile.ip >= target_icon.price:
+						request.user.userprofile.ip = request.user.userprofile.ip - target_icon.price
 						request.user.userprofile.icons.add(target_icon)
 						request.user.userprofile.save()
-						response.update({'success': True, 'data': {'text': 'Icono comprado', 'clp': request.user.userprofile.clp}})
+						response.update({'success': True, 'data': {'text': 'Icono comprado', 'ip': request.user.userprofile.ip}})
 					else:
 						response.update({'success': False, 'data': {'text': 'Dinero insuficiente'}})
 				else:

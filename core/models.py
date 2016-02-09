@@ -31,7 +31,7 @@ def get_default_decks():
 
 class UserProfile(models.Model):
 	user = models.OneToOneField(User)
-	clp = models.IntegerField(default=5000, blank=False)
+	ip = models.IntegerField(default=5000, blank=False)
 	decks = models.TextField(default=get_default_decks(), blank=False)
 	icons = models.ManyToManyField(Icon, null=True)
 

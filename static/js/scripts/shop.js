@@ -1,4 +1,4 @@
-define(['scripts/modals', 'scripts/utilities'], function (modalsModule, utilitiesModule) {
+define([], function () {
 	console.log('iniciando shop.js');
 
 	var shopObj = {

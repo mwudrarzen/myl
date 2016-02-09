@@ -20,8 +20,7 @@ def cards(request):
 	c = {
 		'data': {
 			'settings': {
-				'head': True,
-				'community': False,
+				'core_content': True,
 			},
 			'template': 'cards',
 			'js_include': '',
@@ -38,8 +37,7 @@ def card(request, slug):
 	c = {
 		'data': {
 			'settings': {
-				'head': True,
-				'community': False,
+				'core_content': True,
 			},
 			'template': 'card',
 			'js_include': '',

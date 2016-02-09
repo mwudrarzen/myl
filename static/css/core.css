@@ -7,3 +7,145 @@
 body {
 	background-color: rgb(210, 210, 210);
 }
+
+/* ----- core head ----- */
+
+#core-head {
+	background-color: rgb(50, 50, 50);
+	height: 60px;
+	left: calc(50% - 576px);
+	position: fixed;
+	top: 15px;
+	width: 1152px;
+	/* box shadow */
+	-moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+}
+
+#core-head-content-left {
+	left: 0;
+	position: absolute;
+}
+
+#core-head-button-menu {
+}
+
+#core-head-user {
+	float: left;
+}
+
+#core-head-user-icon-container {
+	float: left;
+	padding: 10px;
+}
+
+#core-head-user-icon {
+	height: 40px;
+	width: 40px;
+	/* box shadow */
+	-moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+}
+
+#core-head-user-data {
+	float: left;
+	padding: 10px 0;
+}
+
+#core-head-user-name {
+	height: 16px;
+	padding-right: 10px;
+	/* font */
+	color: rgb(210, 210, 210);
+	font-family: 'Exo 2', sans-serif;
+	font-size: 16px;
+	text-shadow: 0 -1px rgb(28, 28, 28);
+}
+
+#core-head-user-points {
+	height: 16px;
+	margin-top: 8px;
+	padding-right: 10px;
+	/* font */
+	color: rgb(210, 210, 210);
+	font-family: 'Exo 2', sans-serif;
+	font-size: 16px;
+	text-shadow: 0 -1px rgb(28, 28, 28);
+}
+
+#core-head-play {
+	background-color: rgb(152, 48, 48);
+	cursor: pointer;
+	height: 40px;
+	left: calc(50% - 50px);
+	position: absolute;
+	top: 10px;
+	width: 100px;
+	/* font */
+	color: rgb(210, 210, 210);
+	font-family: 'Exo 2', sans-serif;
+	font-size: 16px;
+	line-height: 40px;
+	text-align: center;
+	text-shadow: 0 -1px rgb(28, 28, 28);
+	/* box shadow */
+	-moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+}
+
+#core-head-play:hover {
+	background-color: rgb(162, 48, 48);
+}
+
+#core-head-content-right {
+	position: absolute;
+	right: 0;
+}
+
+#core-head-button-community {
+}
+
+#core-head-button-notifications {
+}
+
+#core-head-button-messages {
+}
+
+#core-head-button-settings {
+}
+
+#core-head-button-logout {
+}
+
+.core-head-button {
+	cursor: pointer;
+	float: left;
+	height: 60px;
+	width: 60px;
+	/* font */
+	color: rgb(210, 210, 210);
+	font-size: 16px;
+	line-height: 60px;
+	text-align: center;
+	text-shadow: 0 -1px rgb(28, 28, 28);
+}
+
+.core-head-button:hover {
+	background-color: rgb(60, 60, 60);
+}
+
+/* ----- core content ----- */
+
+#core-content { /**/
+	background-color: rgb(50, 50, 50);
+	min-height: 60px;
+	margin: 90px auto 0 auto;
+	width: 1152px;
+	/* box shadow */
+	-moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+}

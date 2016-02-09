@@ -3,52 +3,40 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{% block title %}{% endblock %} - Mitos y Leyendas</title>
+		<title>Mitos y Leyendas</title>
 		<meta charset="UTF-8">
-		<link href='https://fonts.googleapis.com/css?family=Exo+2:300,300italic,400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,500,600,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="{% static 'icomoon/style.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/core.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/loader.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'css/modals.css' %}">
-		{% if data.settings.head %}
-			<link rel="stylesheet" type="text/css" href="{% static 'css/head.css' %}">
-		{% endif %}
-		{% if data.settings.community %}
-			<link rel="stylesheet" type="text/css" href="{% static 'css/community.css' %}">
-		{% endif %}
-		{% block css_files %}{% endblock %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/start.css' %}">
 		<script src="{% static 'js/libraries/require.js' %}"></script>
 		<script>
-			var data = false;
-			{% if data_to_json %}
-				data = {{data_to_json|safe}};
-			{% endif %}
 			requirejs.config({
 				baseUrl: '{% static "js/" %}',
 				urlArgs: 'bust=' + (new Date()).getTime(),
 				paths: {
 					jquery: 'libraries/jquery-2.1.4.min',
 					jqueryui: 'libraries/jquery-ui-1.11.4/jquery-ui.min',
-					waitforimages: 'libraries/jquery.waitforimages.min',
 					jscookie: 'libraries/js.cookie'
 				}
 			});
-			requirejs(['jquery'], function(){
-				$(document).ready(function () {
-					requirejs(['jscookie'], function (jsCookie) {
-						var csrftoken = jsCookie.get('csrftoken');
-						function csrfSafeMethod (method) {
-							return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-						}
-						$.ajaxSetup({
-							beforeSend: function (xhr, settings) {
-								if(!csrfSafeMethod(settings.type) && !this.crossDomain) {
-									xhr.setRequestHeader("X-CSRFToken", csrftoken);
-								}
+			requirejs(['jquery'], function () {
+				requirejs(['jscookie'], function (jsCookie) {
+					var csrftoken = jsCookie.get('csrftoken');
+					function csrfSafeMethod (method) {
+						return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+					}
+					$.ajaxSetup({
+						beforeSend: function (xhr, settings) {
+							if(!csrfSafeMethod(settings.type) && !this.crossDomain) {
+								xhr.setRequestHeader("X-CSRFToken", csrftoken);
 							}
-						});
+						}
 					});
+				});
+				$(document).ready(function () {
 					requirejs(['main']);
 				});
 			});
@@ -56,12 +44,28 @@
 	</head>
 	<body>
 		{% include 'includes/loader.html' %}
-		{% if data.settings.head %}
-			{% include 'includes/head.html' %}
-		{% endif %}
-		{% if data.settings.community %}
-			{% include 'includes/community.html' %}
-		{% endif %}
-		{% block content %}{% endblock %}
+		<div id="core-head">
+			<div id="core-head-content-left">
+				<div id="core-head-button-menu" class="icon icon-menu3 core-head-button"></div>
+				<div id="core-head-user">
+					<div id="core-head-user-icon-container">
+						<img id="core-head-user-icon" src="/static/img/icons/default.png">
+					</div>
+					<div id="core-head-user-data">
+						<div id="core-head-user-name">{{user.username}}</div>
+						<div id="core-head-user-points">{{user.userprofile.ip}}</div>
+					</div>
+				</div>
+			</div>
+			<div id="core-head-play">Jugar</div>
+			<div id="core-head-content-right">
+				<div id="core-head-button-community" class="icon icon-users core-head-button"></div>
+				<div id="core-head-button-notifications" class="icon icon-bell core-head-button"></div>
+				<div id="core-head-button-messages" class="icon icon-drawer2 core-head-button"></div>
+				<div id="core-head-button-settings" class="icon icon-wrench core-head-button"></div>
+				<div id="core-head-button-logout" class="icon icon-exit core-head-button"></div>
+			</div>
+		</div>
+		<div id="core-content"></div>
 	</body>
 </html>
