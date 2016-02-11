@@ -40,6 +40,7 @@ define(['jqueryui', 'scripts/head', 'scripts/community'], function (jQueryUI, he
 				}
 				this.template = templateObj;
 				if(templateObj.cargado) {
+					document.title = templateObj.titulo + ' - ' + 'Mitos y Leyendas';
 					$(templateObj.elementId).show();
 				}
 				else {
@@ -80,7 +81,10 @@ define(['jqueryui', 'scripts/head', 'scripts/community'], function (jQueryUI, he
 
 	$('#core-head-button-messages').click(function () {
 		mainObj.contenido.cambiar(mainObj.contenido.templates.tienda);
-	})
+	});
+	$('#core-head-button-notifications').click(function () {
+		mainObj.contenido.cambiar(mainObj.contenido.templates.inicio);
+	});
 
 	mainObj.inicializar();
 	loaderObj.inicializar();

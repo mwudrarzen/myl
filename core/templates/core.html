@@ -47,29 +47,37 @@
 		{% if ind_page %}
 			{% block content %}{% endblock %}
 		{% else %}
-		<div id="core-head">
-			<div id="core-head-content-left">
-				<div id="core-head-button-menu" class="icon icon-menu3 core-head-button"></div>
-				<div id="core-head-user">
-					<div id="core-head-user-icon-container">
-						<img id="core-head-user-icon" src="/static/img/icons/default.png">
-					</div>
-					<div id="core-head-user-data">
-						<div id="core-head-user-name">{{user.username}}</div>
-						<div id="core-head-user-points">{{user.userprofile.ip}}</div>
+			<div id="core-head">
+				<div id="core-head-content-left">
+					<div id="core-head-button-menu" class="core-head-button-default icon icon-menu3"></div>
+					<div id="core-head-user">
+						<div id="core-head-user-icon-container">
+							<img id="core-head-user-icon" src="/static/img/icons/default.png">
+						</div>
+						<div id="core-head-user-data">
+							<div id="core-head-user-name">{{user.username}}</div>
+							<div id="core-head-user-points">{{user.userprofile.ip}}</div>
+						</div>
 					</div>
 				</div>
+				<div id="core-head-button-play">Jugar</div>
+				<div id="core-head-content-right">
+					<div id="core-head-button-community" class="core-head-button-default icon icon-users"></div>
+					<div id="core-head-button-notifications" class="core-head-button-default icon icon-bell"></div>
+					<div id="core-head-button-messages" class="core-head-button-default icon icon-drawer2"></div>
+					<div id="core-head-button-settings" class="core-head-button-default icon icon-wrench"></div>
+					<div id="core-head-button-logout" class="core-head-button-default icon icon-exit"></div>
+				</div>
 			</div>
-			<div id="core-head-play">Jugar</div>
-			<div id="core-head-content-right">
-				<div id="core-head-button-community" class="icon icon-users core-head-button"></div>
-				<div id="core-head-button-notifications" class="icon icon-bell core-head-button"></div>
-				<div id="core-head-button-messages" class="icon icon-drawer2 core-head-button"></div>
-				<div id="core-head-button-settings" class="icon icon-wrench core-head-button"></div>
-				<div id="core-head-button-logout" class="icon icon-exit core-head-button"></div>
+			<div id="core-content">
+				<div id="temp-menu" class="temp-content">Menu</div>
+				<div id="temp-jugar" class="temp-content">Jugar</div>
+				<div id="temp-comunidad" class="temp-content">Comunidad</div>
+				<div id="temp-notificaciones" class="temp-content">Notificaciones</div>
+				<div id="temp-mensajes" class="temp-content">Mensajes</div>
+				<div id="temp-ajustes" class="temp-content">Ajustes</div>
+				<div id="temp-salir" class="temp-content">Salir</div>
 			</div>
-		</div>
-		<div id="core-content"></div>
 		{% endif %}
 	</body>
 </html>

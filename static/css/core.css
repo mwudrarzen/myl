@@ -17,10 +17,11 @@ body {
 	position: fixed;
 	top: 15px;
 	width: 1152px;
+	z-index: 2;/*temp*/
 	/* box shadow */
-	-moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
-	-webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
-	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.65);
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.65);
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.65);
 }
 
 #core-head-content-left {
@@ -75,7 +76,7 @@ body {
 	text-shadow: 0 -1px rgb(28, 28, 28);
 }
 
-#core-head-play {
+#core-head-button-play {
 	background-color: rgb(152, 48, 48);
 	cursor: pointer;
 	height: 40px;
@@ -96,7 +97,7 @@ body {
 	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
 }
 
-#core-head-play:hover {
+#core-head-button-play:hover {
 	background-color: rgb(162, 48, 48);
 }
 
@@ -120,7 +121,7 @@ body {
 #core-head-button-logout {
 }
 
-.core-head-button {
+.core-head-button-default {
 	cursor: pointer;
 	float: left;
 	height: 60px;
@@ -133,7 +134,7 @@ body {
 	text-shadow: 0 -1px rgb(28, 28, 28);
 }
 
-.core-head-button:hover {
+.core-head-button-default:hover {
 	background-color: rgb(60, 60, 60);
 }
 
@@ -141,11 +142,17 @@ body {
 
 #core-content { /**/
 	background-color: rgb(50, 50, 50);
-	min-height: 60px;
 	margin: 90px auto 0 auto;
-	width: 1152px;
+	min-height: 60px;
+	width: 1137px;
 	/* box shadow */
-	-moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
-	-webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
-	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.65);
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.65);
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.65);
+}
+
+/**/
+
+.temp-content {
+	display: none;
 }
