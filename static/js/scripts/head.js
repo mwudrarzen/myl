@@ -13,7 +13,7 @@ define([], function () {
 			objetos: {
 				menu: {
 					elementId: '#core-head-button-menu',
-					contentId: ''
+					contentId: '#menu'
 				},
 				jugar: {
 					elementId: '#core-head-button-play',
@@ -21,19 +21,19 @@ define([], function () {
 				},
 				comunidad: {
 					elementId: '#core-head-button-community',
-					contentId: ''
+					contentId: '#community'
 				},
 				notificaciones: {
 					elementId: '#core-head-button-notifications',
-					contentId: ''
+					contentId: '#notifications'
 				},
 				mensajes: {
 					elementId: '#core-head-button-messages',
-					contentId: ''
+					contentId: '#messages'
 				},
 				ajustes: {
 					elementId: '#core-head-button-settings',
-					contentId: ''
+					contentId: '#settings'
 				},
 				salir: {
 					elementId: '#core-head-button-logout',
@@ -54,7 +54,7 @@ define([], function () {
 			},
 			activar: function (buttonObj) {
 				this.activo = buttonObj;
-				$(buttonObj.elementId).css('color', 'rgb(152, 152, 152)');
+				$(buttonObj.elementId).css('color', 'rgb(152, 48, 48)');
 				if(buttonObj == this.objetos.menu) {
 					$(buttonObj.elementId).removeClass('icon-menu3').addClass('icon-menu4');
 				}

@@ -9,7 +9,8 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'icomoon/style.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/core.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'css/loader.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/application_loader.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/ajax_loader.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/start.css' %}">
 		<script src="{% static 'js/libraries/require.js' %}"></script>
 		<script>
@@ -20,10 +21,11 @@
 					jquery: 'libraries/jquery-2.1.4.min',
 					jqueryui: 'libraries/jquery-ui-1.11.4/jquery-ui.min',
 					jscookie: 'libraries/js.cookie'
-				}
+				},
+				waitSeconds: 15
 			});
 			requirejs(['jquery'], function () {
-				requirejs(['jscookie'], function (jsCookie) {
+				requirejs(['jscookie'], function (jsCookie) { // poner en main quizas
 					var csrftoken = jsCookie.get('csrftoken');
 					function csrfSafeMethod (method) {
 						return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
@@ -43,7 +45,7 @@
 		</script>
 	</head>
 	<body>
-		{% include 'includes/loader.html' %}
+		{% include 'includes/application_loader.html' %}
 		{% if ind_page %}
 			{% block content %}{% endblock %}
 		{% else %}
@@ -69,15 +71,23 @@
 					<div id="core-head-button-logout" class="core-head-button-default icon icon-exit"></div>
 				</div>
 			</div>
-			<div id="core-content">
-				<div id="temp-menu" class="temp-content">Menu</div>
-				<div id="temp-jugar" class="temp-content">Jugar</div>
-				<div id="temp-comunidad" class="temp-content">Comunidad</div>
-				<div id="temp-notificaciones" class="temp-content">Notificaciones</div>
-				<div id="temp-mensajes" class="temp-content">Mensajes</div>
-				<div id="temp-ajustes" class="temp-content">Ajustes</div>
-				<div id="temp-salir" class="temp-content">Salir</div>
+			<div id="core-container">
+				<div id="core-content">
+					{% include 'includes/ajax_loader.html' with elementId="core-content-loader" %}
+				</div>
 			</div>
+			<!---->
+			<div id="menu">
+				<ul id="menu-options">
+					<li id="menu-option-start" class="menu-option">Inicio</li>
+					<li id="menu-option-shop" class="menu-option">Tienda</li>
+					<li id="menu-option-cards" class="menu-option">Cartas</li>
+				</ul>
+			</div>
+			<div id="community"></div>
+			<div id="notifications"></div>
+			<div id="messages"></div>
+			<div id="settings"></div>
 		{% endif %}
 	</body>
 </html>

@@ -1,4 +1,4 @@
-define(['jqueryui', 'scripts/head', 'scripts/community'], function (jQueryUI, headModule, communityModule) {
+define(['jqueryui', 'scripts/head'], function (jQueryUI, headModule) {
 	console.log('iniciando main.js');
 
 	var mainObj = {
@@ -7,10 +7,11 @@ define(['jqueryui', 'scripts/head', 'scripts/community'], function (jQueryUI, he
 			this.renderizar();
 		},
 		renderizar: function () {
-			this.contenido.cambiar(this.contenido.templates.inicio);
+			menuObj.botones.accionar(menuObj.botones.objetos.inicio);
+			$('#application-loader').fadeOut();
 		},
-		contenido: {
-			templates: {
+		templates: {
+			objetos: {
 				inicio: {
 					nombre: 'start',
 					titulo: 'Inicio',
@@ -30,7 +31,15 @@ define(['jqueryui', 'scripts/head', 'scripts/community'], function (jQueryUI, he
 					elementId: '#core-content-shop',
 					cargado: false
 				},
-				cartas: {},
+				cartas: {
+					nombre: 'cards',
+					titulo: 'Cartas',
+					url: '/cards/',
+					cssPath: '/static/css/cards.css',
+					jsPath: '',
+					elementId: '#core-content-cards',
+					cargado: false
+				},
 				carta: {}
 			},
 			template: undefined,
@@ -69,23 +78,63 @@ define(['jqueryui', 'scripts/head', 'scripts/community'], function (jQueryUI, he
 		}
 	};
 
-	var loaderObj = {
-		inicializar: function () {
-			console.log('inicializando loaderObj');
-			this.renderizar();
-		},
-		renderizar: function () {
-			$('#loader').fadeOut();
+	var menuObj = {
+		botones: {
+			objetos: {
+				inicio: {
+					elementId: '#menu-option-start',
+					url: '/start/',
+					objeto: mainObj.templates.objetos.inicio
+				},
+				tienda: {
+					elementId: '#menu-option-shop',
+					url: '/shop/',
+					objeto: mainObj.templates.objetos.tienda
+				},
+				cartas: {
+					elementId: '#menu-option-cards',
+					url: '/cards/',
+					objeto: mainObj.templates.objetos.cartas
+				}
+			},
+			activo: undefined,
+			accionar: function (buttonObj) {
+				if(this.activo != undefined) {
+					if(buttonObj == this.activo) return false;
+					else {
+						this.desactivar();
+					}
+				}
+				this.activar(buttonObj);
+			},
+			activar: function (buttonObj) {
+				this.activo = buttonObj;
+				mainObj.templates.cambiar(buttonObj.objeto);
+				$(buttonObj.elementId).addClass('menu-option-selected');
+				if(headModule.botones.activo != undefined) {
+					headModule.botones.desactivar();
+				}
+			},
+			desactivar: function () {
+				$(this.activo.elementId).removeClass('menu-option-selected');
+				this.activo = undefined;
+			}
 		}
 	};
 
-	$('#core-head-button-messages').click(function () {
-		mainObj.contenido.cambiar(mainObj.contenido.templates.tienda);
+	$('#menu-option-start').click(function () {
+		menuObj.botones.accionar(menuObj.botones.objetos.inicio);
 	});
-	$('#core-head-button-notifications').click(function () {
-		mainObj.contenido.cambiar(mainObj.contenido.templates.inicio);
+
+	$('#menu-option-shop').click(function () {
+		menuObj.botones.accionar(menuObj.botones.objetos.tienda);
+	});
+
+	$('#menu-option-cards').click(function () {
+		menuObj.botones.accionar(menuObj.botones.objetos.cartas);
 	});
 
 	mainObj.inicializar();
-	loaderObj.inicializar();
+
+	return mainObj;
 });
