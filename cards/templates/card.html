@@ -1,16 +1,6 @@
-{% extends 'core.html' %}
-
-{% load staticfiles %}
-
-{% block title %}{{card.nombre}} (carta){% endblock %}
-
 {% block content_ta %}
 	<div>Esto es una carta</div>
 	<div>{{card.nombre}}</div>
 	<div>{{card.numero_de_coleccionista}}</div>
 	<div>{{user.username}}</div>
-{% endblock %}
-
-{% block css_files %}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/card.css' %}">
 {% endblock %}

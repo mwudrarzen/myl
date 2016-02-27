@@ -1,8 +1,9 @@
-<div id="test">This is the cards.html template</div>
 {% for card in page %}
-	<div>{{card.nombre}}</div>
-	<div>{{card.numero_de_coleccionista}}</div>
-	<div class="url" data-url="{{card.get_absolute_url}}">Ver</div>
+	<div class="card">
+		<div>{{card.nombre}}</div>
+		<div>{{card.numero_de_coleccionista}}</div>
+		<div class="card-url" data-title="Carta {{card.nombre}}" data-url="{{card.get_absolute_url}}">Ver</div>
+	</div>
 {% endfor %}
 {% if page.has_previous %}
 	<div class="url" data-url="?page={{page.previous_page_number}}">previous</div>

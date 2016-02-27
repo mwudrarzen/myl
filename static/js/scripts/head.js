@@ -1,19 +1,12 @@
 define([], function () {
 	console.log('iniciando head.js');
 
-	var headObj = {
-		inicializar: function () {
-			console.log('inicializando headObj');
-			this.renderizar();
-		},
-		renderizar: function () {
-			//
-		},
+	var obj = {
 		botones: {
 			objetos: {
 				menu: {
 					elementId: '#core-head-button-menu',
-					contentId: '#menu'
+					contentId: '#core-menu'
 				},
 				jugar: {
 					elementId: '#core-head-button-play',
@@ -21,19 +14,19 @@ define([], function () {
 				},
 				comunidad: {
 					elementId: '#core-head-button-community',
-					contentId: '#community'
+					contentId: '#core-community'
 				},
 				notificaciones: {
 					elementId: '#core-head-button-notifications',
-					contentId: '#notifications'
+					contentId: '#core-notifications'
 				},
 				mensajes: {
 					elementId: '#core-head-button-messages',
-					contentId: '#messages'
+					contentId: '#core-messages'
 				},
 				ajustes: {
 					elementId: '#core-head-button-settings',
-					contentId: '#settings'
+					contentId: '#core-settings'
 				},
 				salir: {
 					elementId: '#core-head-button-logout',
@@ -72,34 +65,32 @@ define([], function () {
 	};
 
 	$('#core-head-button-menu').click(function () {
-		headObj.botones.accionar(headObj.botones.objetos.menu);
+		obj.botones.accionar(obj.botones.objetos.menu);
 	});
 
 	$('#core-head-button-play').click(function () {
-		headObj.botones.accionar(headObj.botones.objetos.jugar);
+		obj.botones.accionar(obj.botones.objetos.jugar);
 	});
 
 	$('#core-head-button-community').click(function () {
-		headObj.botones.accionar(headObj.botones.objetos.comunidad);
+		obj.botones.accionar(obj.botones.objetos.comunidad);
 	});
 
 	$('#core-head-button-notifications').click(function () {
-		headObj.botones.accionar(headObj.botones.objetos.notificaciones);
+		obj.botones.accionar(obj.botones.objetos.notificaciones);
 	});
 
 	$('#core-head-button-messages').click(function () {
-		headObj.botones.accionar(headObj.botones.objetos.mensajes);
+		obj.botones.accionar(obj.botones.objetos.mensajes);
 	});
 
 	$('#core-head-button-settings').click(function () {
-		headObj.botones.accionar(headObj.botones.objetos.ajustes);
+		obj.botones.accionar(obj.botones.objetos.ajustes);
 	});
 
 	$('#core-head-button-logout').click(function () {
-		headObj.botones.accionar(headObj.botones.objetos.salir);
+		obj.botones.accionar(obj.botones.objetos.salir);
 	});
 
-	headObj.inicializar();
-
-	return headObj;
+	return obj;
 });

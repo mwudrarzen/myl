@@ -1,17 +1,9 @@
 define([], function () {
 	console.log('iniciando shop.js');
 
-	var shopObj = {
-		inicializar: function () {
-			console.log('inicializando shopObj')
-			this.renderizar();
-		},
-		renderizar: function () {
-			//
-		}
+	var obj = {
+		//
 	};
 
-	shopObj.inicializar();
-
-	return shopObj;
+	return obj;
 });

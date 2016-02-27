@@ -8,7 +8,7 @@ body {
 	background-color: rgb(210, 210, 210);
 }
 
-/* core head */
+/* ----- core head ----- */
 
 #core-head {
 	background-color: rgb(50, 50, 50);
@@ -17,7 +17,7 @@ body {
 	position: fixed;
 	top: 15px;
 	width: 1152px;
-	z-index: 2;/*temp*/
+	z-index: 2;
 	/* box shadow */
 	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
 	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
@@ -138,7 +138,7 @@ body {
 	background-color: rgb(60, 60, 60);
 }
 
-/* core content */
+/* ----- core content ----- */
 
 #core-container {
 	padding: 90px 0 15px 0;
@@ -155,9 +155,9 @@ body {
 	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
-/**/
+/* ----- core menu ----- */
 
-#menu {
+#core-menu {
 	background-color: rgb(50, 50, 50);
 	display: none;
 	left: calc(50% - 576px);
@@ -170,10 +170,10 @@ body {
 	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
-#menu-options {
+#core-menu-options {
 }
 
-.menu-option {
+.core-menu-option {
 	cursor: pointer;
 	height: 40px;
 	padding-left: 10px;
@@ -185,11 +185,11 @@ body {
 	text-shadow: 0 -1px rgb(28, 28, 28);
 }
 
-.menu-option:not(.menu-option-selected):hover {
+.core-menu-option:not(.core-menu-option-selected):hover {
 	background-color: rgb(60, 60, 60);
 }
 
-.menu-option-selected {
+.core-menu-option-selected {
 	background-color: rgb(40, 40, 40);
 	color: rgb(152, 48, 48);
 	cursor: default;
