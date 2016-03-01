@@ -194,3 +194,23 @@ body {
 	color: rgb(152, 48, 48);
 	cursor: default;
 }
+
+/* core window */
+
+/* core helpText */
+
+#core-hText {
+	background-color: rgb(28, 28, 28);
+	display: none;
+	padding: 10px;
+	position: fixed;
+	z-index: 20000;
+	/* font */
+	color: rgb(210, 210, 210);
+	font-family: 'Exo 2', sans-serif;
+	font-size: 14px;
+	/* box shadow */
+	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+}

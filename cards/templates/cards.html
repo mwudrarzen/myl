@@ -1,16 +1,11 @@
-{% for card in page %}
-	<div class="card">
-		<div>{{card.nombre}}</div>
-		<div>{{card.numero_de_coleccionista}}</div>
-		<div class="card-url" data-title="Carta {{card.nombre}}" data-url="{{card.get_absolute_url}}">Ver</div>
+<div id="cards-container">
+	<div id="cards-content">
+		{% for card in page %}
+			<div class="cards-card">
+				{{card.nombre}} - {{card.numero_de_coleccionista}}
+				<div class="card-url" data-title="Carta {{card.nombre}}" data-url="{{card.get_absolute_url}}">Ver</div>
+			</div>
+		{% endfor %}
 	</div>
-{% endfor %}
-{% if page.has_previous %}
-	<div class="url" data-url="?page={{page.previous_page_number}}">previous</div>
-{% endif %}
-{% if page.has_previous or page.has_next %}
-	<div>Page {{page.number}} of {{page.paginator.num_pages}}.</div>
-{% endif %}
-{% if page.has_next %}
-	<div class="url" data-url="?page={{page.next_page_number}}">next</div>
-{% endif %}
+</div>
+{% include 'includes/card.html' %}

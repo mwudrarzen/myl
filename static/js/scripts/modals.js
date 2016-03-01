@@ -1,18 +1,8 @@
 define([], function () {
 	console.log('iniciando modals.js');
 
-	var modalsObj = {
-		inicializar: function () {
-			console.log('inicializando modalsObj');
-			this.renderizar();
-		},
-		renderizar: function () {
-			//
-		}
+	var obj = {
 	};
 
-	modalsObj.inicializar();
-
-	return modalsObj;
+	return obj;
 });
- 

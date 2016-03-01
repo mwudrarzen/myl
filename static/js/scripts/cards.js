@@ -1,4 +1,4 @@
-define(['scripts/templates'], function (templatesModule) {
+define(['scripts/templates', 'scripts/card'], function (templatesModule, cardModule) {
 	console.log('iniciando cards.js');
 
 	var obj = {
