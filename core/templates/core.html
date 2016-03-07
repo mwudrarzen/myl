@@ -14,37 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/start.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/cards.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/card.css' %}">
-		<script src="{% static 'js/libraries/require.js' %}"></script>
-		<script>
-			requirejs.config({
-				baseUrl: '{% static "js/" %}',
-				urlArgs: 'bust=' + (new Date()).getTime(),
-				paths: {
-					jquery: 'libraries/jquery-2.1.4.min',
-					jqueryui: 'libraries/jquery-ui-1.11.4/jquery-ui.min',
-					jscookie: 'libraries/js.cookie'
-				},
-				waitSeconds: 15
-			});
-			requirejs(['jquery'], function () {
-				requirejs(['jscookie'], function (jsCookie) { // poner en main quizas
-					var csrftoken = jsCookie.get('csrftoken');
-					function csrfSafeMethod (method) {
-						return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-					}
-					$.ajaxSetup({
-						beforeSend: function (xhr, settings) {
-							if(!csrfSafeMethod(settings.type) && !this.crossDomain) {
-								xhr.setRequestHeader("X-CSRFToken", csrftoken);
-							}
-						}
-					});
-				});
-				$(document).ready(function () {
-					requirejs(['main']);
-				});
-			});
-		</script>
+		<script data-main="{% static 'js/scripts/main' %}" src="{% static 'js/libraries/require.js' %}"></script>
 	</head>
 	<body>
 		{% include 'includes/application_loader.html' %}
@@ -54,6 +24,7 @@
 			<div id="core-head">
 				<div id="core-head-content-left">
 					<div id="core-head-button-menu" class="core-head-button-default icon icon-menu3 hText" data-active="false" data-hText="Haz clic aquí para abrir/cerrar el menú"></div>
+					<div class="core-head-separator"></div>
 					<div id="core-head-user">
 						<div id="core-head-user-icon-container">
 							<img id="core-head-user-icon" src="/static/img/icons/default.png">
@@ -63,13 +34,19 @@
 							<div id="core-head-user-points">{{user.userprofile.ip}}</div>
 						</div>
 					</div>
+					<div class="core-head-separator"></div>
 				</div>
 				<div id="core-head-button-play">Jugar</div>
 				<div id="core-head-content-right">
+					<div class="core-head-separator"></div>
 					<div id="core-head-button-community" class="core-head-button-default icon icon-users hText" data-active="false" data-hText="Haz clic aquí para abrir/cerrar la ventana de comunidad"></div>
+					<div class="core-head-separator"></div>
 					<div id="core-head-button-notifications" class="core-head-button-default icon icon-bell hText" data-active="false" data-hText="Haz clic aquí para abrir/cerrar la ventana de notificaciones"></div>
+					<div class="core-head-separator"></div>
 					<div id="core-head-button-messages" class="core-head-button-default icon icon-drawer2 hText" data-active="false" data-hText="Haz clic aquí para abrir/cerrar la ventana de tus mensajes"></div>
+					<div class="core-head-separator"></div>
 					<div id="core-head-button-settings" class="core-head-button-default icon icon-wrench hText" data-active="false" data-hText="Haz clic aquí para abrir/cerrar la ventana de ajustes"></div>
+					<div class="core-head-separator"></div>
 					<div id="core-head-button-logout" class="core-head-button-default icon icon-exit hText" data-active="false" data-hText="Haz clic aquí para cerrar sesión"></div>
 				</div>
 			</div>
@@ -83,8 +60,12 @@
 			<div id="core-menu">
 				<ul id="core-menu-options">
 					<li id="core-menu-option-start" class="core-menu-option" data-selected="false">Inicio</li>
+					<li class="core-menu-option-separator"></li>
 					<li id="core-menu-option-shop" class="core-menu-option" data-selected="false">Tienda</li>
+					<li class="core-menu-option-separator"></li>
 					<li id="core-menu-option-cards" class="core-menu-option" data-selected="false">Cartas</li>
+					<li class="core-menu-option-separator"></li>
+					<li id="core-menu-option-cards" class="core-menu-option" data-selected="false">Registro de cambios</li>
 				</ul>
 			</div>
 
