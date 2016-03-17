@@ -17,11 +17,11 @@ body {
 	position: fixed;
 	top: 15px;
 	width: 1152px;
-	z-index: 2;
+	z-index: 10;
 	/* box shadow */
-	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
-	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
+	-webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
+	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
 }
 
 #core-head-content-left {
@@ -36,10 +36,6 @@ body {
 	float: left;
 }
 
-#core-head-user * { /*test*/
-	cursor: pointer;
-}
-
 #core-head-user-icon-container {
 	float: left;
 	padding: 10px;
@@ -49,9 +45,9 @@ body {
 	height: 40px;
 	width: 40px;
 	/* box shadow */
-	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
-	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.35);
+	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.35);
 }
 
 #core-head-user-data {
@@ -96,9 +92,9 @@ body {
 	text-align: center;
 	text-shadow: 0 -1px rgb(28, 28, 28);
 	/* box shadow */
-	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
-	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.35);
+	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.35);
 }
 
 #core-head-button-play:hover {
@@ -151,19 +147,22 @@ body {
 
 /* ----- core content ----- */
 
-#core-container {
+#core-content {
+}
+
+#core-content-container {
 	padding: 90px 0 15px 0;
 }
 
-#core-content {
+#core-content-content {
 	background-color: rgb(232, 232, 232);
 	margin: 0 auto;
 	padding: 10px;
 	width: 1137px;
 	/* box shadow */
-	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
-	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
+	-webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
+	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
 }
 
 /* ----- core menu ----- */
@@ -175,10 +174,11 @@ body {
 	position: fixed;
 	top: 82.5px;
 	width: 250px;
+	z-index: 10;
 	/* box shadow */
-	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
-	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
+	-webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
+	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
 }
 
 #core-menu-options {
@@ -213,6 +213,105 @@ body {
 
 /* core window */
 
+#core-windowBase {
+	display: none;
+}
+
+.core-window {
+}
+
+.core-window-container {
+	position: fixed;
+	z-index: 20;
+	/* box shadow */
+	-moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
+	-webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
+	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
+}
+
+.core-window-head {
+	background-color: rgb(50, 50, 50);
+	height: 50px;
+}
+
+.core-window-head-title {
+	/* font */
+	color: rgb(210, 210, 210);
+	font-family: 'Exo 2', sans-serif;
+	font-size: 16px;
+	line-height: 50px;
+	text-align: center;
+	text-shadow: 0 -1px rgb(28, 28, 28);
+}
+
+.core-window-content-container {
+	background-color: rgb(50, 50, 50);
+	padding: 0 10px;
+}
+
+.core-window-content-border {
+	border: 1px solid rgb(28, 28, 28);
+}
+
+.core-window-content {
+	background-color: rgb(40, 40, 40);
+}
+
+.core-window-footer {
+	background-color: rgb(50, 50, 50);
+	height: 50px;
+}
+
+/* core windowContent */ /*de aqui para abajo sin pulir*/
+
+#core-community {
+	display: none;
+	height: 400px;
+	padding: 10px;
+	width: 350px;
+	/* font */
+	color: rgb(210, 210, 210);
+	font-family: 'Exo 2', sans-serif;
+	font-size: 13px;
+	text-shadow: 0 -1px rgb(28, 28, 28);
+}
+
+#core-notifications {
+	display: none;
+	height: 500px;
+	padding: 10px;
+	width: 720px;
+	/* font */
+	color: rgb(210, 210, 210);
+	font-family: 'Exo 2', sans-serif;
+	font-size: 13px;
+	text-shadow: 0 -1px rgb(28, 28, 28);
+}
+
+#core-messages {
+	display: none;
+	height: 300px;
+	padding: 10px;
+	width: 450px;
+	/* font */
+	color: rgb(210, 210, 210);
+	font-family: 'Exo 2', sans-serif;
+	font-size: 13px;
+	text-shadow: 0 -1px rgb(28, 28, 28);
+}
+
+#core-settings {
+	display: none;
+	height: 640px;
+	padding: 10px;
+	width: 480px;
+	/* font */
+	color: rgb(210, 210, 210);
+	font-family: 'Exo 2', sans-serif;
+	font-size: 13px;
+	text-shadow: 0 -1px rgb(28, 28, 28);
+}
+
 /* core helpText */
 
 #core-hText {
@@ -220,13 +319,13 @@ body {
 	display: none;
 	padding: 10px;
 	position: fixed;
-	z-index: 20000;
+	z-index: 30;
 	/* font */
 	color: rgb(210, 210, 210);
 	font-family: 'Exo 2', sans-serif;
 	font-size: 14px;
 	/* box shadow */
-	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
-	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
+	-webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
+	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.45);
 }

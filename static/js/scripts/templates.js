@@ -51,7 +51,7 @@ define(['scripts/utilities'], function (utilitiesModule) {
 				$(_templateObj.elementId).show();
 			}
 			else {
-				$('#core-content-loader').show();
+				$('#core-content-content-loader').show();
 				$.ajax({
 					url: _templateObj.url,
 					type: 'GET',
@@ -61,13 +61,13 @@ define(['scripts/utilities'], function (utilitiesModule) {
 						el = $('<div id="' + _templateObj.elementId.substring(1) + '"></div>');
 						el.html(_response);
 						requirejs([_templateObj.jsPath], function () {
-							$('#core-content-loader').hide();
-							$('#core-content').append(el);
+							$('#core-content-content-loader').hide();
+							$('#core-content-content').append(el);
 							_templateObj.cargado = true;
 						});
 					},
 					error: function () {
-						$('#core-content-loader').hide();
+						$('#core-content-content-loader').hide();
 						alert('error');
 						// meter un reintentar
 					}

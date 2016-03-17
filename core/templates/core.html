@@ -23,7 +23,7 @@
 		{% else %}
 			<div id="core-head">
 				<div id="core-head-content-left">
-					<div id="core-head-button-menu" class="core-head-button-default icon icon-menu3 hText" data-active="false" data-hText="Haz clic aquí para abrir/cerrar el menú"></div>
+					<div id="core-head-button-menu" class="core-head-button-default icon icon-menu3 hText" data-active="false" data-hText="Haz clic aquí para abrir o cerrar el menú"></div>
 					<div class="core-head-separator"></div>
 					<div id="core-head-user">
 						<div id="core-head-user-icon-container">
@@ -39,46 +39,65 @@
 				<div id="core-head-button-play">Jugar</div>
 				<div id="core-head-content-right">
 					<div class="core-head-separator"></div>
-					<div id="core-head-button-community" class="core-head-button-default icon icon-users hText" data-active="false" data-hText="Haz clic aquí para abrir/cerrar la ventana de comunidad"></div>
+					<div id="core-head-button-community" class="core-head-button-default icon icon-users hText" data-active="false" data-hText="Haz clic aquí para abrir o cerrar la ventana de comunidad"></div>
 					<div class="core-head-separator"></div>
-					<div id="core-head-button-notifications" class="core-head-button-default icon icon-bell hText" data-active="false" data-hText="Haz clic aquí para abrir/cerrar la ventana de notificaciones"></div>
+					<div id="core-head-button-notifications" class="core-head-button-default icon icon-bell hText" data-active="false" data-hText="Haz clic aquí para abrir o cerrar la ventana de notificaciones"></div>
 					<div class="core-head-separator"></div>
-					<div id="core-head-button-messages" class="core-head-button-default icon icon-drawer2 hText" data-active="false" data-hText="Haz clic aquí para abrir/cerrar la ventana de tus mensajes"></div>
+					<div id="core-head-button-messages" class="core-head-button-default icon icon-drawer2 hText" data-active="false" data-hText="Haz clic aquí para abrir o cerrar la ventana de mensajes"></div>
 					<div class="core-head-separator"></div>
-					<div id="core-head-button-settings" class="core-head-button-default icon icon-wrench hText" data-active="false" data-hText="Haz clic aquí para abrir/cerrar la ventana de ajustes"></div>
+					<div id="core-head-button-settings" class="core-head-button-default icon icon-wrench hText" data-active="false" data-hText="Haz clic aquí para abrir o cerrar la ventana de ajustes"></div>
 					<div class="core-head-separator"></div>
 					<div id="core-head-button-logout" class="core-head-button-default icon icon-exit hText" data-active="false" data-hText="Haz clic aquí para cerrar sesión"></div>
 				</div>
 			</div>
 
-			<div id="core-container">
-				<div id="core-content">
-					{% include 'includes/ajax_loader.html' with elementId="core-content-loader" %}
+			<div id="core-content">
+				<div id="core-content-container">
+					<div id="core-content-content">
+						{% include 'includes/ajax_loader.html' with elementId="core-content-content-loader" %}
+					</div>
 				</div>
 			</div>
 
-			<div id="core-menu">
-				<ul id="core-menu-options">
-					<li id="core-menu-option-start" class="core-menu-option" data-selected="false">Inicio</li>
-					<li class="core-menu-option-separator"></li>
-					<li id="core-menu-option-shop" class="core-menu-option" data-selected="false">Tienda</li>
-					<li class="core-menu-option-separator"></li>
-					<li id="core-menu-option-cards" class="core-menu-option" data-selected="false">Cartas</li>
-					<li class="core-menu-option-separator"></li>
-					<li id="core-menu-option-cards" class="core-menu-option" data-selected="false">Registro de cambios</li>
-				</ul>
+			<div id="core-hiddenElements">
+				<div id="core-menu">
+					<ul id="core-menu-options">
+						<li id="core-menu-option-start" class="core-menu-option" data-selected="false">Inicio</li>
+						<li class="core-menu-option-separator"></li>
+						<li id="core-menu-option-shop" class="core-menu-option" data-selected="false">Tienda</li>
+						<li class="core-menu-option-separator"></li>
+						<li id="core-menu-option-cards" class="core-menu-option" data-selected="false">Cartas</li>
+						<li class="core-menu-option-separator"></li>
+						<li id="core-menu-option-cards" class="core-menu-option" data-selected="false">Registro de cambios</li>
+					</ul>
+				</div>
+
+				<div id="core-community">This is the core-community html</div>
+				<div id="core-notifications">This is the core-notifications html</div>
+				<div id="core-messages">This is the core-messages html</div>
+				<div id="core-settings">This is the core-settings html</div>
+
+				<div id="core-windowBase" class="core-window">
+					<div class="core-window-container">
+						<div class="core-window-head">
+							<div class="core-window-head-title"></div>
+						</div>
+						<div class="core-window-content-container">
+							<div class="core-window-content-border">
+								<div class="core-window-content"></div>
+							</div>
+						</div>
+						<div class="core-window-footer">
+						</div>
+					</div>
+				</div>
+
+				<div class="core-modal"></div>
+
+				<div id="core-hText"></div>
 			</div>
 
-			<div id="core-community"></div>
-			<div id="core-notifications"></div>
-			<div id="core-messages"></div>
-			<div id="core-settings"></div>
-
-			<div class="core-window"></div>
-
-			<div class="core-modal"></div>
-
-			<div id="core-hText"></div>
+			<div id="core-temporalElements"></div>
 		{% endif %}
 	</body>
 </html>

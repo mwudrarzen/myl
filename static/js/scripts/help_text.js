@@ -1,5 +1,5 @@
 define([], function () {
-	var helpTextObj = {
+	var obj = {
 		elementId: '#core-hText',
 		isActive: false,
 		timer: null,
@@ -10,30 +10,30 @@ define([], function () {
 	$('.hText').on({
 		'mouseenter': function () {
 			var self = $(this);
-			$(helpTextObj.elementId).html(self.attr('data-hText'));
-			helpTextObj.timer = setTimeout(function () {
-				helpTextObj.isActive = true;
-				$(helpTextObj.elementId).show();
-			}, helpTextObj.delay);
+			$(obj.elementId).html(self.attr('data-hText'));
+			obj.timer = setTimeout(function () {
+				obj.isActive = true;
+				$(obj.elementId).show();
+			}, obj.delay);
 		},
 		'mousemove': function (e) {
-			$(helpTextObj.elementId).css('top', e.pageY + helpTextObj.margin);
+			$(obj.elementId).css('top', e.pageY + obj.margin);
 			if(e.pageX > ($(document).width() / 100) * 50) {
-				$(helpTextObj.elementId).css('left', e.pageX - (($(helpTextObj.elementId).width() + 20) + helpTextObj.margin));
+				$(obj.elementId).css('left', e.pageX - (($(obj.elementId).width() + 20) + obj.margin));
 			}
 			else {
-				$(helpTextObj.elementId).css('left', e.pageX + helpTextObj.margin);
+				$(obj.elementId).css('left', e.pageX + obj.margin);
 			}
 		},
 		'mouseleave': function () {
-			if(helpTextObj.isActive) {
-				$(helpTextObj.elementId).hide();
-				$(helpTextObj.elementId).empty();
-				helpTextObj.isActive = false;
+			if(obj.isActive) {
+				$(obj.elementId).hide();
+				$(obj.elementId).empty();
+				obj.isActive = false;
 			}
 			else {
-				clearTimeout(helpTextObj.timer);
-				$(helpTextObj.elementId).empty();
+				clearTimeout(obj.timer);
+				$(obj.elementId).empty();
 			}
 		}
 	});
