@@ -217,9 +217,6 @@ body {
 	display: none;
 }
 
-.core-window {
-}
-
 .core-window-container {
 	position: fixed;
 	z-index: 20;
@@ -235,22 +232,23 @@ body {
 }
 
 .core-window-head-title {
+	left: 10px;
+	position: absolute;
+	top: 17px;
 	/* font */
 	color: rgb(210, 210, 210);
 	font-family: 'Exo 2', sans-serif;
 	font-size: 16px;
-	line-height: 50px;
-	text-align: center;
 	text-shadow: 0 -1px rgb(28, 28, 28);
 }
 
 .core-window-content-container {
 	background-color: rgb(50, 50, 50);
-	padding: 0 10px;
 }
 
 .core-window-content-border {
-	border: 1px solid rgb(28, 28, 28);
+	border-bottom: 1px solid rgb(28, 28, 28);
+	border-top: 1px solid rgb(28, 28, 28);
 }
 
 .core-window-content {
@@ -266,9 +264,9 @@ body {
 
 #core-community {
 	display: none;
-	height: 400px;
+	height: 375px;
 	padding: 10px;
-	width: 350px;
+	width: 375px;
 	/* font */
 	color: rgb(210, 210, 210);
 	font-family: 'Exo 2', sans-serif;
@@ -278,9 +276,9 @@ body {
 
 #core-notifications {
 	display: none;
-	height: 500px;
+	height: 400px;
 	padding: 10px;
-	width: 720px;
+	width: 425px;
 	/* font */
 	color: rgb(210, 210, 210);
 	font-family: 'Exo 2', sans-serif;
@@ -302,9 +300,9 @@ body {
 
 #core-settings {
 	display: none;
-	height: 640px;
+	height: 225px;
 	padding: 10px;
-	width: 480px;
+	width: 275px;
 	/* font */
 	color: rgb(210, 210, 210);
 	font-family: 'Exo 2', sans-serif;
@@ -315,7 +313,7 @@ body {
 /* core helpText */
 
 #core-hText {
-	background-color: rgb(28, 28, 28);
+	background-color: rgba(28, 28, 28, 0.9);
 	display: none;
 	padding: 10px;
 	position: fixed;
